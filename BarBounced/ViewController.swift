@@ -13,9 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //Head Hancho -> first person -> the rest are just ur average honchos
         
     }
-
+    @IBAction func userName(_ sender: UITextField) {
+    }
+    
 
 }
 
