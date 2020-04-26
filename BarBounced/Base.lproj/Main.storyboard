@@ -68,6 +68,7 @@
                     </view>
                     <connections>
                         <outlet property="addPlayerTextField" destination="CNe-93-kN9" id="JAh-mM-GW5"/>
+                        <segue destination="CZU-sh-Ndb" kind="presentation" identifier="addedPlayer1Segue" id="bHb-t0-oKM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -101,6 +102,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dkt-yP-wtW"/>
                     </view>
+                    <connections>
+                        <outlet property="playerLabel" destination="IU5-lH-CGH" id="Tbg-vO-IeR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEV-BP-JSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
