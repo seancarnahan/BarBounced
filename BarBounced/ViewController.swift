@@ -16,9 +16,12 @@ class ViewController: UIViewController {
         //Head Hancho -> first person -> the rest are just ur average honchos
         
     }
-    @IBAction func userName(_ sender: UITextField) {
+
+    @IBOutlet weak var addPlayerTextField: UITextField!
+    
+    
+    @IBAction func addPlayerButton(_ sender: UIButton) {
     }
     
-
 }
 

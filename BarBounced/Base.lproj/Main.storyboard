@@ -21,6 +21,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="addUserTextField:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="oaO-Gm-ur2"/>
                                     <action selector="userName:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="scA-vk-IfF"/>
                                 </connections>
                             </textField>
@@ -38,6 +39,9 @@
                                     <color key="titleShadowColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPlayerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YVW-WH-icg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaU-gM-ySJ">
                                 <rect key="frame" x="313" y="217" width="270" height="87"/>
@@ -47,6 +51,9 @@
                                 <state key="normal" title="Send It!!!!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="button:" destination="g2d-CN-pJY" eventType="touchUpInside" id="ghU-qY-BvM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BarBounce" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWW-ZO-0SR">
                                 <rect key="frame" x="305" y="30" width="286" height="140"/>
@@ -59,8 +66,12 @@
                         <color key="backgroundColor" red="0.2683170708" green="0.52451794659999995" blue="0.27351966840000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addPlayerTextField" destination="CNe-93-kN9" id="JAh-mM-GW5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="g2d-CN-pJY" userLabel="Exit" sceneMemberID="exit"/>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3C5-aT-4j6">
                     <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -70,6 +81,30 @@
                 </label>
             </objects>
             <point key="canvasLocation" x="138.61607142857142" y="137.68115942028987"/>
+        </scene>
+        <!--One Added Player View Controller-->
+        <scene sceneID="Iq2-hK-nWK">
+            <objects>
+                <viewController id="CZU-sh-Ndb" customClass="oneAddedPlayerViewController" customModule="BarBounced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gZJ-C4-t5n">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IU5-lH-CGH">
+                                <rect key="frame" x="130" y="40" width="185" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dkt-yP-wtW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEV-BP-JSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.61607142857142" y="1002.8985507246377"/>
         </scene>
     </scenes>
 </document>
