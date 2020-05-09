@@ -10,12 +10,21 @@
 
 import UIKit
 
+extension UIColor {
+    static var random: UIColor {
+        return UIColor(red: .random(in: 0...1),
+                       green: .random(in: 0...1),
+                        blue: .random(in: 0...1),
+                        alpha: 1.0)
+    }
+}
+
 class gameController: UIViewController {
     //USER should be replaced with random name
     var gameMessages = [
         "Must vote as a group and decide who they believe is the least likely to be able to swim.": false,
         "Must vote and decide who is most likely to get a kill tonight": false,
-        "First to stand to stand on a table": false,
+        "Say this outload: 'First to stand on a table doesnt have to drink. 1 . 2 . 3 GO! ": false,
         "Play Drive": false,
         "Play Waterfall regarding the person who reads this card": false,
         "You are not a true sender, the player to the USER's right, take off your pants or else drink": true,
@@ -23,20 +32,19 @@ class gameController: UIViewController {
     ]
     
     var ordinalCounter = 0
+    var finalAddedPlayer: [String] = []
+    var listOfGames: [GameObj] = []
     
     class GameObj {
         var ordinal: Int?
-        var color: String?
+        var color: UIColor?
         var personalityWinner: String?
         var personality: String?
         var message: String?
         var personalityGame: Bool?
     }
 
-    var finalAddedPlayer: [String] = []
-    var listOfGames: [GameObj] = []
-    
-    
+
     @IBOutlet weak var gameViewMessage: UILabel!
     
     override func viewDidLoad() {
@@ -49,14 +57,20 @@ class gameController: UIViewController {
             populateListofGames(key: key, value: value)
         }
         
-        //ViewListOfGames() //print contents of listOfGames
+        ViewListOfGames() //print contents of listOfGames
         
+        //START GAME -> show new Card
         populateGameCard()
+    }
+    
+    func showNewCard () {
+        
     }
     
     func populateGameCard(){
         let game = getRandomGame()
         gameViewMessage.text = game.message
+        view.backgroundColor = game.color
     }
     
     func populateListofGames(key: String, value: Bool) {
@@ -73,8 +87,15 @@ class gameController: UIViewController {
             newGame.message = key
         }
         
+        //add random color for background
+        let randomColor: UIColor = .random
+        
+        
+        
+        
+        //SET FIELDS
         newGame.ordinal = ordinalCounter
-        newGame.color = "(--Replace with hex value--)" //add logic
+        newGame.color = randomColor
         newGame.personalityWinner = ""
         newGame.personality = ""
         
@@ -107,4 +128,10 @@ class gameController: UIViewController {
     func getRandomGame() -> GameObj{
         return listOfGames.randomElement()!
     }
+    
+
+//    var listOfColors: [String] = ["0xfc0303", "0xfc8003", "0xfcfc03", "0x03ff03", "0x0303ff", "0x8103ff", "0xff03ff"]
+//
+    
+    
 }
