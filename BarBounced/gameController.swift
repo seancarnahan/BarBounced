@@ -26,7 +26,7 @@ class gameController: UIViewController {
     class GameObj {
         var ordinal: Int?
         var color: String?
-        var userName: Bool?
+        var userName: String?
         var message: String?
         var personalityGame: Bool?
     }
@@ -44,20 +44,27 @@ class gameController: UIViewController {
             populateListofGames()
         }
         
-        ViewListOfGames() //print contents of listOfGames
+        //ViewListOfGames() //print contents of listOfGames
     }
     
     func populateListofGames() {
         let newGame = GameObj()
+        
+        //get random name
+        print(getRandomName())
+        
+        
+        
         newGame.ordinal = ordinalCounter
         newGame.color = "(--Replace with hex value--)" //add logic
-        newGame.userName = false //add logic
+        newGame.userName = ""
         newGame.message = gameMessages[ordinalCounter]
         newGame.personalityGame = false //add logic
         
         ordinalCounter += 1
         
         listOfGames.append(newGame)
+        
     }
     
     func ViewListOfGames(){
@@ -69,5 +76,9 @@ class gameController: UIViewController {
             print(game.message!)
             print(game.personalityGame!)
         }
+    }
+    
+    func getRandomName() -> String{
+        return finalAddedPlayer.randomElement()!
     }
 }
