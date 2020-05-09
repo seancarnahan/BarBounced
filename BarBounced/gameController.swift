@@ -36,6 +36,9 @@ class gameController: UIViewController {
     var finalAddedPlayer: [String] = []
     var listOfGames: [GameObj] = []
     
+    
+    @IBOutlet weak var gameViewMessage: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("LOADED: gameController.swift")
@@ -46,7 +49,14 @@ class gameController: UIViewController {
             populateListofGames(key: key, value: value)
         }
         
-        ViewListOfGames() //print contents of listOfGames
+        //ViewListOfGames() //print contents of listOfGames
+        
+        populateGameCard()
+    }
+    
+    func populateGameCard(){
+        let game = getRandomGame()
+        gameViewMessage.text = game.message
     }
     
     func populateListofGames(key: String, value: Bool) {
@@ -62,8 +72,6 @@ class gameController: UIViewController {
         } else {
             newGame.message = key
         }
-        
-        
         
         newGame.ordinal = ordinalCounter
         newGame.color = "(--Replace with hex value--)" //add logic
@@ -93,5 +101,10 @@ class gameController: UIViewController {
     func getRandomName() -> String{
         //add check to see if any players were added
         return finalAddedPlayer.randomElement()!
+        
+    }
+    
+    func getRandomGame() -> GameObj{
+        return listOfGames.randomElement()!
     }
 }
