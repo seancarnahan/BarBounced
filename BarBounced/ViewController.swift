@@ -52,5 +52,19 @@ class ViewController: UIViewController {
         
         addPlayerTextField.text = ""
     }
+    
+   //withIdentifier is the identifier for the segue
+    @IBAction func sendItButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "gameViewSegue", sender: self)
+    }
+    
+    //this function is called everytime a segue is called
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! gameController
+        //sets value of a variable in gameController
+        vc.finalAddedPlayer = self.addedPlayers
+    }
+    
+    
 }
 

@@ -53,6 +53,7 @@
                                 </state>
                                 <connections>
                                     <action selector="button:" destination="g2d-CN-pJY" eventType="touchUpInside" id="ghU-qY-BvM"/>
+                                    <action selector="sendItButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DgZ-Ru-P0u"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BarBounce" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWW-ZO-0SR">
@@ -92,7 +93,7 @@
                         <outlet property="userOne" destination="Pz2-wC-8yw" id="Ipe-YM-2Ng"/>
                         <outlet property="userThree" destination="NMV-Su-yFm" id="sJg-oD-dUZ"/>
                         <outlet property="userTwo" destination="Zk6-ar-0Tf" id="XuZ-E0-Uf5"/>
-                        <segue destination="6Kp-3W-ZLF" kind="presentation" destinationCreationSelector="gameSegue:" id="616-Pj-QZX"/>
+                        <segue destination="6Kp-3W-ZLF" kind="presentation" identifier="gameViewSegue" destinationCreationSelector="gameViewSegue:" id="616-Pj-QZX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -107,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="138.61607142857142" y="137.68115942028987"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Controller-->
         <scene sceneID="x06-MF-fwn">
             <objects>
-                <viewController id="6Kp-3W-ZLF" sceneMemberID="viewController">
+                <viewController id="6Kp-3W-ZLF" customClass="gameController" customModule="BarBounced" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="61J-KF-ayz">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
