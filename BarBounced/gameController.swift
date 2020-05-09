@@ -19,6 +19,8 @@ extension UIColor {
     }
 }
 
+
+
 class gameController: UIViewController {
     //USER should be replaced with random name
     var gameMessages = [
@@ -57,27 +59,53 @@ class gameController: UIViewController {
             populateListofGames(key: key, value: value)
         }
         
-        ViewListOfGames() //print contents of listOfGames
+        //ViewListOfGames() //print contents of listOfGames
+        
+        
+        
+        
+        //LEFT TAP and RIGHT TAP
+        let touchArea = CGSize(width: self.view.frame.width/2, height: self.view.frame.height)
+        let leftView = UIView(frame: CGRect(origin: .zero, size: touchArea))
+        let rightView = UIView(frame: CGRect(origin: CGPoint(x: self.view.frame.width - touchArea.width, y: 0), size: touchArea))
+    leftView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(leftViewTapped)))
+    rightView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(rightViewTapped)))
+
+        self.view.addSubview(leftView)
+        self.view.addSubview(rightView)
+
         
         //START GAME -> show new Card
         populateGameCard()
+        
     }
     
+    @objc func leftViewTapped() {
+        print("Left")
+        populateGameCard()
+        
+    }
+    
+    @objc func rightViewTapped() {
+        print("Right")
+        populateGameCard()
+    }
+    
+
     func showNewCard () {
         
     }
     
     func populateGameCard(){
         let game = getRandomGame()
+        
         gameViewMessage.text = game.message
         view.backgroundColor = game.color
     }
     
     func populateListofGames(key: String, value: Bool) {
         let newGame = GameObj()
-        
-        //get random name
-        print(getRandomName())
+    
         
         //add userName field
         let nameToReplace = getRandomName()
