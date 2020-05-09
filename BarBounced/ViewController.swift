@@ -13,21 +13,44 @@ class ViewController: UIViewController {
     @IBOutlet weak var addPlayerTextField: UITextField!
     
     var player1Name = ""
+    var addedUsers = 0
+    var possibleUsers: [UILabel] = []
 
+    @IBOutlet weak var userOne: UILabel!
+    
+    @IBOutlet weak var userTwo: UILabel!
+    
+    @IBOutlet weak var userThree: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        userOne.isHidden = true
+        userTwo.isHidden = true
+        userThree.isHidden = true
+        
+        possibleUsers.append(userOne)
+        possibleUsers.append(userTwo)
+        possibleUsers.append(userThree)
+        
+        print("-------------")
+        print(possibleUsers)
         // Do any additional setup after loading the view.
         //Head Hancho -> first person -> the rest are just ur average honchos
     }
     
     @IBAction func addPlayerButton(_ sender: UIButton) {
+        //ADDING USER
         self.player1Name = addPlayerTextField.text!
-        performSegue(withIdentifier: "addedPlayer1Segue", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! oneAddedPlayerViewController
-        vc.user1 = self.player1Name
+        
+        possibleUsers[addedUsers].isHidden = false
+        possibleUsers[addedUsers].text = self.player1Name
+        addedUsers += 1
+        
+        
+        
+        
+        
+        self.player1Name = addPlayerTextField.text!
     }
     
     
