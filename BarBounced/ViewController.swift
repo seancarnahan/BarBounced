@@ -47,8 +47,6 @@ class ViewController: UIViewController {
         addedPlayers.append(self.player1Name)
         addedUsers += 1
         
-        print("-------------")
-        print(addedPlayers)
         
         addPlayerTextField.text = ""
     }
@@ -60,7 +58,8 @@ class ViewController: UIViewController {
     
     //this function is called everytime a segue is called
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! gameController
+        let vc = segue.destination as! gameController
+        
         //sets value of a variable in gameController
         vc.finalAddedPlayer = self.addedPlayers
     }
