@@ -92,6 +92,7 @@
                         <outlet property="userOne" destination="Pz2-wC-8yw" id="Ipe-YM-2Ng"/>
                         <outlet property="userThree" destination="NMV-Su-yFm" id="sJg-oD-dUZ"/>
                         <outlet property="userTwo" destination="Zk6-ar-0Tf" id="XuZ-E0-Uf5"/>
+                        <segue destination="6Kp-3W-ZLF" kind="presentation" destinationCreationSelector="gameSegue:" id="616-Pj-QZX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -105,6 +106,21 @@
                 </label>
             </objects>
             <point key="canvasLocation" x="138.61607142857142" y="137.68115942028987"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="x06-MF-fwn">
+            <objects>
+                <viewController id="6Kp-3W-ZLF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="61J-KF-ayz">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="nrg-Kf-UqD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HNR-48-1nF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="1135"/>
         </scene>
     </scenes>
 </document>

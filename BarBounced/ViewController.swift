@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var player1Name = ""
     var addedUsers = 0
     var possibleUsers: [UILabel] = []
+    var addedPlayers: [String] = []
 
     @IBOutlet weak var userOne: UILabel!
     
@@ -33,7 +34,6 @@ class ViewController: UIViewController {
         possibleUsers.append(userThree)
         
         print("-------------")
-        print(possibleUsers)
         // Do any additional setup after loading the view.
         //Head Hancho -> first person -> the rest are just ur average honchos
     }
@@ -44,16 +44,13 @@ class ViewController: UIViewController {
         
         possibleUsers[addedUsers].isHidden = false
         possibleUsers[addedUsers].text = self.player1Name
+        addedPlayers.append(self.player1Name)
         addedUsers += 1
         
+        print("-------------")
+        print(addedPlayers)
         
-        
-        
-        
-        self.player1Name = addPlayerTextField.text!
+        addPlayerTextField.text = ""
     }
-    
-    
-    
 }
 
