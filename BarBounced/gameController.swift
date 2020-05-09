@@ -11,14 +11,15 @@
 import UIKit
 
 class gameController: UIViewController {
+    //USER should be replaced with random name
     var gameMessages = [
-        "Must vote as a group and decide who they believe is the least likely to be able to swim.",
-        "Must vote and decide who is most likely to get a kill tonight",
-        "First to stand to stand on a table",
-        "Play Drive",
-        "Play Waterfall regarding the person who reads this card",
-        "You are not a true sender, take off your pants or else drink",
-        "You are not a true sender, look at this card and make the person to the right drink twice because you have no goals in your life"
+        "Must vote as a group and decide who they believe is the least likely to be able to swim.": false,
+        "Must vote and decide who is most likely to get a kill tonight": false,
+        "First to stand to stand on a table": false,
+        "Play Drive": false,
+        "Play Waterfall regarding the person who reads this card": false,
+        "You are not a true sender, the player to the USER's right, take off your pants or else drink": true,
+        "You are not a true sender, look at this card and make the person to the right drink twice because you have no goals in your life": false
     ]
     
     var ordinalCounter = 0
@@ -26,7 +27,8 @@ class gameController: UIViewController {
     class GameObj {
         var ordinal: Int?
         var color: String?
-        var userName: String?
+        var personalityWinner: String?
+        var personality: String?
         var message: String?
         var personalityGame: Bool?
     }
@@ -40,25 +42,34 @@ class gameController: UIViewController {
         print(finalAddedPlayer)
 
         //construct games object -> underscore means we dont use that item
-        for _ in gameMessages {
-            populateListofGames()
+        for (key,value) in gameMessages {
+            populateListofGames(key: key, value: value)
         }
         
-        //ViewListOfGames() //print contents of listOfGames
+        ViewListOfGames() //print contents of listOfGames
     }
     
-    func populateListofGames() {
+    func populateListofGames(key: String, value: Bool) {
         let newGame = GameObj()
         
         //get random name
         print(getRandomName())
         
+        //add userName field
+        let nameToReplace = getRandomName()
+        if value {
+            newGame.message = key.replacingOccurrences(of: "USER", with:nameToReplace)
+        } else {
+            newGame.message = key
+        }
+        
         
         
         newGame.ordinal = ordinalCounter
         newGame.color = "(--Replace with hex value--)" //add logic
-        newGame.userName = ""
-        newGame.message = gameMessages[ordinalCounter]
+        newGame.personalityWinner = ""
+        newGame.personality = ""
+        
         newGame.personalityGame = false //add logic
         
         ordinalCounter += 1
@@ -70,15 +81,17 @@ class gameController: UIViewController {
     func ViewListOfGames(){
         for game in listOfGames {
             print("-----------Game ", game.ordinal!, ": -------------------")
-            print(game.ordinal!)
-            print(game.color!)
-            print(game.userName!)
-            print(game.message!)
-            print(game.personalityGame!)
+            print("Ordinal:",game.ordinal!)
+            print("color:",game.color!)
+            print("personalityWinner:",game.personalityWinner!)
+            print("personality:",game.personality!)
+            print("message:",game.message!)
+            print("personalityGame:",game.personalityGame!)
         }
     }
     
     func getRandomName() -> String{
+        //add check to see if any players were added
         return finalAddedPlayer.randomElement()!
     }
 }
