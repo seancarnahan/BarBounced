@@ -129,11 +129,27 @@
                     </view>
                     <connections>
                         <outlet property="gameViewMessage" destination="XM5-N4-2gH" id="B3l-1i-Rc5"/>
+                        <segue destination="SP2-3i-NOK" kind="presentation" identifier="personalityWarningSegue" id="aZt-UF-DEk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNR-48-1nF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.61607142857142" y="1134.7826086956522"/>
+        </scene>
+        <!--Personality WarningVC-->
+        <scene sceneID="Dao-Qa-Zxv">
+            <objects>
+                <viewController id="SP2-3i-NOK" customClass="PersonalityWarningVC" customModule="BarBounced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rok-7j-Nyr">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="NKH-bX-iB9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8xd-wI-xAH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="2083"/>
         </scene>
     </scenes>
 </document>
