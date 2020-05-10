@@ -34,8 +34,9 @@ class gameController: UIViewController {
     ]
     
     var ordinalCounter = 0
-    var finalAddedPlayer: [String] = []
+    var finalAddedPlayers: [String:String] = [:]
     var listOfGames: [GameObj] = []
+    var gameCardCounter = 0
     
     class GameObj {
         var ordinal: Int?
@@ -52,7 +53,7 @@ class gameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("LOADED: gameController.swift")
-        print(finalAddedPlayer)
+        print(finalAddedPlayers)
 
         //construct games object -> underscore means we dont use that item
         for (key,value) in gameMessages {
@@ -91,16 +92,34 @@ class gameController: UIViewController {
         populateGameCard()
     }
     
-
-    func showNewCard () {
-        
-    }
     
     func populateGameCard(){
+        let randomList = [1,2,3,4]
+        let random = randomList.randomElement()
+        if gameCardCounter == 5 && random == 1 {
+            //possibility of segue to personality warning
+        
+            performSegue(withIdentifier: "personalityWarningSegue", sender: self)
+            
+        } else if gameCardCounter == 10 {
+            //absolutely segue to personality warning
+            performSegue(withIdentifier: "personalityWarningSegue", sender: self)
+        }
+    
+        
+        
         let game = getRandomGame()
         
         gameViewMessage.text = game.message
         view.backgroundColor = game.color
+        gameCardCounter += 1
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! PersonalityWarningVC
+        
+        //sets value of a variable in gameController
+        vc.finalAddedPlayers = self.finalAddedPlayers
     }
     
     func populateListofGames(key: String, value: Bool) {
@@ -149,7 +168,8 @@ class gameController: UIViewController {
     
     func getRandomName() -> String{
         //add check to see if any players were added
-        return finalAddedPlayer.randomElement()!
+        
+        return finalAddedPlayers.keys.randomElement()!
         
     }
     

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var player1Name = ""
     var addedUsers = 0
     var possibleUsers: [UILabel] = []
-    var addedPlayers: [String] = []
+    var addedPlayers: [String:String] = [:]
 
     @IBOutlet weak var userOne: UILabel!
     
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         
         possibleUsers[addedUsers].isHidden = false
         possibleUsers[addedUsers].text = self.player1Name
-        addedPlayers.append(self.player1Name)
+        addedPlayers[self.player1Name] = ""
         addedUsers += 1
         
         
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         let vc = segue.destination as! gameController
         
         //sets value of a variable in gameController
-        vc.finalAddedPlayer = self.addedPlayers
+        vc.finalAddedPlayers = self.addedPlayers
     }
     
     
