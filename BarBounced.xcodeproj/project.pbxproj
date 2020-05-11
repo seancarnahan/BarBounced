@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E11A5E02468E67F00DB6EA3 /* PersonalityGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E11A5DF2468E67F00DB6EA3 /* PersonalityGameVC.swift */; };
 		7E275062242AD76600E2687D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E275061242AD76600E2687D /* AppDelegate.swift */; };
 		7E275064242AD76600E2687D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E275063242AD76600E2687D /* SceneDelegate.swift */; };
 		7E275066242AD76600E2687D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E275065242AD76600E2687D /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E11A5DF2468E67F00DB6EA3 /* PersonalityGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityGameVC.swift; sourceTree = "<group>"; };
 		7E27505E242AD76600E2687D /* BarBounced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarBounced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E275061242AD76600E2687D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E275063242AD76600E2687D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				7E27506C242AD76700E2687D /* LaunchScreen.storyboard */,
 				7E27506F242AD76700E2687D /* Info.plist */,
 				7E3AC69A24678F3000C3F2F5 /* PersonalityWarningVC.swift */,
+				7E11A5DF2468E67F00DB6EA3 /* PersonalityGameVC.swift */,
 			);
 			path = BarBounced;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				7E3AC69B24678F3000C3F2F5 /* PersonalityWarningVC.swift in Sources */,
 				7E275066242AD76600E2687D /* ViewController.swift in Sources */,
 				7E3AC69924668D5F00C3F2F5 /* gameController.swift in Sources */,
+				7E11A5E02468E67F00DB6EA3 /* PersonalityGameVC.swift in Sources */,
 				7E275062242AD76600E2687D /* AppDelegate.swift in Sources */,
 				7E275064242AD76600E2687D /* SceneDelegate.swift in Sources */,
 			);

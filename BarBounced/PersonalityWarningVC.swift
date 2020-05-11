@@ -11,6 +11,7 @@ import UIKit
 class PersonalityWarningVC: UIViewController {
 
     var finalAddedPlayers: [String:String] = [:]
+    var whichSegue = "game"
     
     
     override func viewDidLoad() {
@@ -20,4 +21,34 @@ class PersonalityWarningVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func startPersonGameButton(_ sender: Any) {
+        whichSegue = "personality"
+        performSegue(withIdentifier: "personGameSegue", sender: self)
+    }
+    
+    
+    @IBAction func pleaseReturnToGame(_ sender: Any) {
+        whichSegue = "game"
+        performSegue(withIdentifier: "returnToGameSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if whichSegue == "game" {
+            let vc = segue.destination as! gameController
+                   
+            //sets value of a variable in gameController
+            vc.finalAddedPlayers = self.finalAddedPlayers
+        } else if whichSegue == "personality" {
+            let PGVC = segue.destination as! PersonalityGameVC
+                              
+            //sets value of a variable in gameController
+            PGVC.finalAddedPlayers = self.finalAddedPlayers
+            
+        }
+       
+    }
+    
+    
 }
