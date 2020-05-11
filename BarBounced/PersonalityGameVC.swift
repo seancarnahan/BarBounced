@@ -72,6 +72,7 @@ class PersonalityGameVC: UIViewController {
     var listOfPersonCards: [PGameObj] = []
     var ordinalCounter = 0
     var currentPCardNameTitle = "BLANK"
+    var dataToSend: [String] = []
     
     @IBOutlet weak var pGameTitle: UILabel!
     
@@ -123,8 +124,17 @@ class PersonalityGameVC: UIViewController {
     
     @objc func rightViewTapped() {
         print("Personality Right click")
+         performSegue(withIdentifier: "winnerChoosesSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! PersonChooserVC
+        
+        //sets value of a variable in gameController
+        vc.finalAddedPlayers = self.finalAddedPlayers
         
     }
+    
     
     func populatePCard() {
         let randomCard = getRandomPCard()
@@ -147,9 +157,6 @@ class PersonalityGameVC: UIViewController {
         
         
         //populate personality card game
-
-        
-        
         newPGame.ordinal = ordinalCounter
         newPGame.message = value
         newPGame.name = key
@@ -163,26 +170,19 @@ class PersonalityGameVC: UIViewController {
     
     func getRandomName() -> String{
         //add check to see if any players were added
-        
         return finalAddedPlayers.keys.randomElement()!
         
     }
     
     func getRandomPCard() -> PGameObj {
         let randomCard = listOfPersonCards.randomElement()!
-        print(randomCard.name!)
         return randomCard
         
     }
     
     func getPGame(cardName: String) -> String {
         let nameToReplace = getRandomName()
-        print("-------")
-        print(cardName)
-        if cardName == "The Wine aficionado" {
-            print("BREAK")
-        }
-        print(gameMessages[cardName]![0])
+
         let pGameMessage = gameMessages[cardName]![0]
         
         if ((gameMessages[cardName]?[1]) != nil) {
