@@ -58,6 +58,7 @@ class PersonalityGameVC: UIViewController {
         var name : String?
         var color : UIColor?
         var personalityGame = true
+        var game : String?
     }
 
     override func viewDidLoad() {
@@ -76,9 +77,13 @@ class PersonalityGameVC: UIViewController {
     
     func populatePGameCard() {
         let randomCard = getRandomPGame()
+        let titleText = pGameTitle.text!
+        
+        pGameTitle.text = titleText.replacingOccurrences(of: "BLANK", with:randomCard.name!)
         
         view.backgroundColor = randomCard.color
         pGameMain.text = randomCard.message
+        
         
     }
     
