@@ -136,6 +136,21 @@
             </objects>
             <point key="canvasLocation" x="138.61607142857142" y="1134.7826086956522"/>
         </scene>
+        <!--Personality GameVC-->
+        <scene sceneID="lEI-nP-zZy">
+            <objects>
+                <viewController id="xvQ-Hf-eMH" customClass="PersonalityGameVC" customModule="BarBounced" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LOC-P9-zR6">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0MC-ke-G8P"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b35-ak-i2W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="664" y="2138"/>
+        </scene>
         <!--Personality WarningVC-->
         <scene sceneID="Dao-Qa-Zxv">
             <objects>
@@ -166,36 +181,29 @@
                                     <action selector="pleaseReturnToGame:" destination="SP2-3i-NOK" eventType="touchUpInside" id="rud-5g-pWR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5i-9d-eVl">
+                                <rect key="frame" x="681" y="172" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="startPersonGameButton:" destination="SP2-3i-NOK" eventType="touchUpInside" id="tcA-8w-OYO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.77962256187828161" green="0.83738499365482233" blue="0.17367351121064414" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="NKH-bX-iB9"/>
                     </view>
                     <connections>
                         <segue destination="6Kp-3W-ZLF" kind="presentation" identifier="returnToGameSegue" destinationCreationSelector="returnToGameAction:" id="cK3-OA-wtE"/>
+                        <segue destination="xvQ-Hf-eMH" kind="presentation" identifier="personGameSegue" id="Naa-Y4-vyT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xd-wI-xAH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-424.55357142857139" y="2044.9275362318842"/>
-        </scene>
-        <!--Personallity GameVC-->
-        <scene sceneID="g88-U8-nsN">
-            <objects>
-                <viewController id="Lha-Sa-tkm" customClass="PersonallityGameVC" customModule="BarBounced" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MEq-1c-034">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="jBO-Ou-GlZ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HqR-Fl-vBi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="382" y="2081"/>
+            <point key="canvasLocation" x="-327" y="2138"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aZt-UF-DEk"/>
         <segue reference="cK3-OA-wtE"/>
     </inferredMetricsTieBreakers>
 </document>
