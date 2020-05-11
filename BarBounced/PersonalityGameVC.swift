@@ -8,6 +8,15 @@
 
 import UIKit
 
+extension UIColor {
+    static var  randomColor: UIColor {
+        return UIColor(red: .random(in: 0...1),
+                       green: .random(in: 0...1),
+                        blue: .random(in: 0...1),
+                        alpha: 1.0)
+    }
+}
+
 class PersonalityGameVC: UIViewController {
     
     var personGameMessages = [
@@ -43,7 +52,7 @@ class PersonalityGameVC: UIViewController {
         var ordinal : Int?
         var message : String?
         var name : String?
-        //var color : UIColor?
+        var color : UIColor?
         var personalityGame = true
     }
 
@@ -55,7 +64,7 @@ class PersonalityGameVC: UIViewController {
             populateListOfPersonGames(key: key, value: value)
         }
         
-        //viewListOfPersonGames() -> used for debugging purposes
+        //viewListOfPersonGames() //-> used for debugging purposes
         
         
         
@@ -65,11 +74,13 @@ class PersonalityGameVC: UIViewController {
         print("Enter Personality ")
         let newPGame = PGameObj()
         
+        //add random color for background
+        let randomColor: UIColor = .randomColor
         
         newPGame.ordinal = ordinalCounter
         newPGame.message = value
         newPGame.name = key
-        //newPGame.color =
+        newPGame.color = randomColor
         ordinalCounter += 1
         
         listOfPersonGames.append(newPGame)
@@ -84,9 +95,9 @@ class PersonalityGameVC: UIViewController {
         for game in listOfPersonGames {
             print("-----------Game ", game.ordinal!, ": -------------------")
             print("Ordinal:",game.ordinal!)
-            print("message:",game.message!)
             print("name:",game.name!)
-            //print("color:",game.color!)
+            print("message:",game.message!)
+            print("color:",game.color!)
             print("personalityGame:",game.personalityGame)
         }
     }
