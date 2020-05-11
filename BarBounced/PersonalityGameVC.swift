@@ -48,6 +48,10 @@ class PersonalityGameVC: UIViewController {
     var listOfPersonGames: [PGameObj] = []
     var ordinalCounter = 0
     
+    @IBOutlet weak var pGameTitle: UILabel!
+    
+    @IBOutlet weak var pGameMain: UILabel!
+    
     class PGameObj {
         var ordinal : Int?
         var message : String?
@@ -66,12 +70,19 @@ class PersonalityGameVC: UIViewController {
         
         //viewListOfPersonGames() //-> used for debugging purposes
         
+        populatePGameCard()
         
+    }
+    
+    func populatePGameCard() {
+        let randomCard = getRandomPGame()
+        
+        view.backgroundColor = randomCard.color
+        pGameMain.text = randomCard.message
         
     }
     
     func populateListOfPersonGames(key: String, value: String) {
-        print("Enter Personality ")
         let newPGame = PGameObj()
         
         //add random color for background
@@ -87,8 +98,8 @@ class PersonalityGameVC: UIViewController {
         
     }
     
-    func getRandomPGame() -> String {
-        return personGameMessages.keys.randomElement()!
+    func getRandomPGame() -> PGameObj {
+        return listOfPersonGames.randomElement()!
     }
     
     func viewListOfPersonGames() {
