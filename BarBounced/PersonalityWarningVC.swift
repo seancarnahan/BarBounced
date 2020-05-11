@@ -20,4 +20,18 @@ class PersonalityWarningVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func pleaseReturnToGame(_ sender: Any) {
+        performSegue(withIdentifier: "returnToGameSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! gameController
+        
+        //sets value of a variable in gameController
+        vc.finalAddedPlayers = self.finalAddedPlayers
+    }
+    
+    
 }
