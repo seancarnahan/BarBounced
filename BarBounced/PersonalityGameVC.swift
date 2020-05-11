@@ -71,6 +71,7 @@ class PersonalityGameVC: UIViewController {
     var finalAddedPlayers: [String:String] = [:]
     var listOfPersonCards: [PGameObj] = []
     var ordinalCounter = 0
+    var currentPCardNameTitle = "BLANK"
     
     @IBOutlet weak var pGameTitle: UILabel!
     
@@ -94,9 +95,34 @@ class PersonalityGameVC: UIViewController {
             populateListOfPersonCards(key: key, value: value)
         }
         
+        
+        
         //viewListOfPersonCards() //-> used for debugging purposes
         
+        //LEFT TAP and RIGHT TAP
+        let touchArea = CGSize(width: self.view.frame.width/2, height: self.view.frame.height)
+        
+        let leftView = UIView(frame: CGRect(origin: .zero, size: touchArea))
+        let rightView = UIView(frame: CGRect(origin: CGPoint(x: self.view.frame.width - touchArea.width, y: 0), size: touchArea))
+    leftView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(leftViewTapped)))
+    rightView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(rightViewTapped)))
+
+        self.view.addSubview(leftView)
+        self.view.addSubview(rightView)
+        
         populatePCard()
+        
+    }
+    
+    @objc func leftViewTapped() {
+        print("Personality Left click")
+        populatePCard()
+        
+        
+    }
+    
+    @objc func rightViewTapped() {
+        print("Personality Right click")
         
     }
     
@@ -104,7 +130,8 @@ class PersonalityGameVC: UIViewController {
         let randomCard = getRandomPCard()
         let titleText = pGameTitle.text!
         
-        pGameTitle.text = titleText.replacingOccurrences(of: "BLANK", with:randomCard.name!)
+        pGameTitle.text = titleText.replacingOccurrences(of: currentPCardNameTitle, with:randomCard.name!)
+        currentPCardNameTitle = randomCard.name!
         
         view.backgroundColor = randomCard.color
         pGameMain.text = randomCard.gameMessage
@@ -142,7 +169,10 @@ class PersonalityGameVC: UIViewController {
     }
     
     func getRandomPCard() -> PGameObj {
-        return listOfPersonCards.randomElement()!
+        let randomCard = listOfPersonCards.randomElement()!
+        print(randomCard.name!)
+        return randomCard
+        
     }
     
     func getPGame(cardName: String) -> String {
