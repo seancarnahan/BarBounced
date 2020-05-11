@@ -17,6 +17,16 @@ extension UIColor {
     }
 }
 
+class PGameObj {
+    var ordinal : Int?
+    var message : String?
+    var name : String?
+    var color : UIColor?
+    var personalityGame = true
+    var gameMessage : String?
+    var isPerson: Bool?
+}
+
 class PersonalityGameVC: UIViewController {
     var gameMessages = [
         "The Wine Aficionado" : ["The Wine Aficionado game USER",true],
@@ -68,25 +78,20 @@ class PersonalityGameVC: UIViewController {
         "The Lumberjack Card":"Must wear a flannel and button it up all the way, beard"
     ]
     
-    var finalAddedPlayers: [String:String] = [:]
+    var finalAddedPlayers: [playerObject] = []
     var listOfPersonCards: [PGameObj] = []
+    var dictNameToOrdinal: [String: Int] = [:]
+    
     var ordinalCounter = 0
     var currentPCardNameTitle = "BLANK"
     var dataToSend: [String] = []
+    var cardOrdinal = 0
     
     @IBOutlet weak var pGameTitle: UILabel!
     
     @IBOutlet weak var pGameMain: UILabel!
     
-    class PGameObj {
-        var ordinal : Int?
-        var message : String?
-        var name : String?
-        var color : UIColor?
-        var personalityGame = true
-        var gameMessage : String?
-        var isPerson: Bool?
-    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,6 +129,7 @@ class PersonalityGameVC: UIViewController {
     
     @objc func rightViewTapped() {
         print("Personality Right click")
+        
          performSegue(withIdentifier: "winnerChoosesSegue", sender: self)
     }
     
@@ -132,6 +138,9 @@ class PersonalityGameVC: UIViewController {
         
         //sets value of a variable in gameController
         vc.finalAddedPlayers = self.finalAddedPlayers
+        vc.listOfPersonCards = self.listOfPersonCards
+        vc.cardOrdinal = self.cardOrdinal
+        vc.dictNameToOrdinal = self.dictNameToOrdinal
         
     }
     
@@ -140,6 +149,7 @@ class PersonalityGameVC: UIViewController {
         let randomCard = getRandomPCard()
         let titleText = pGameTitle.text!
         
+        cardOrdinal = randomCard.ordinal!
         pGameTitle.text = titleText.replacingOccurrences(of: currentPCardNameTitle, with:randomCard.name!)
         currentPCardNameTitle = randomCard.name!
         
@@ -150,27 +160,33 @@ class PersonalityGameVC: UIViewController {
     }
     
     func populateListOfPersonCards(key: String, value: String) {
-        let newPGame = PGameObj()
+        let newPCard = PGameObj()
         
         //add random color for background
         let randomColor: UIColor = .randomColor
         
+        //populate dictNameToOrdinal: String -> Int
+        dictNameToOrdinal[key] = ordinalCounter
         
         //populate personality card game
-        newPGame.ordinal = ordinalCounter
-        newPGame.message = value
-        newPGame.name = key
-        newPGame.color = randomColor
-        newPGame.gameMessage = getPGame(cardName: key)
+        newPCard.ordinal = ordinalCounter
+        newPCard.message = value
+        newPCard.name = key
+        newPCard.color = randomColor
+        newPCard.gameMessage = getPGame(cardName: key)
         ordinalCounter += 1
         
-        listOfPersonCards.append(newPGame)
+        listOfPersonCards.append(newPCard)
         
     }
     
     func getRandomName() -> String{
         //add check to see if any players were added
-        return finalAddedPlayers.keys.randomElement()!
+         var randomNames : [String] = []
+         for player in finalAddedPlayers {
+             randomNames.append(player.playerName!)
+         }
+         return randomNames.randomElement()!
         
     }
     

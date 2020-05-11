@@ -34,7 +34,7 @@ class gameController: UIViewController {
     ]
     
     var ordinalCounter = 0
-    var finalAddedPlayers: [String:String] = [:]
+    var finalAddedPlayers: [playerObject] = []
     var listOfGames: [GameObj] = []
     var gameCardCounter = 0
     
@@ -168,9 +168,11 @@ class gameController: UIViewController {
     
     func getRandomName() -> String{
         //add check to see if any players were added
-        
-        return finalAddedPlayers.keys.randomElement()!
-        
+        var randomNames : [String] = []
+        for player in finalAddedPlayers {
+            randomNames.append(player.playerName!)
+        }
+        return randomNames.randomElement()!
     }
     
     func getRandomGame() -> GameObj{
