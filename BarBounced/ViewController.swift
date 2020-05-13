@@ -50,12 +50,11 @@ class ViewController: UIViewController {
     
     @IBAction func addPlayerButton(_ sender: UIButton) {
         //ADDING USER
+        print("IS BUTTON PRESSED SECOND TIME THRU")
         self.player1Name = addPlayerTextField.text!
         
         possibleUsers[addedUsers].isHidden = false
         possibleUsers[addedUsers].text = self.player1Name
-        //addedPlayers[self.player1Name] = ""
-        //addedPlayers[addedUsers] = [self.player1Name, ""]
         
         let newPlayer = playerObject()
         newPlayer.playerID = addedUsers

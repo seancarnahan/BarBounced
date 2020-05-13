@@ -143,10 +143,6 @@ class PersonChooserVC: UIViewController {
     }
     
     func secondPlayerChosen(ID: Int) {
-        print("personalityTitleToAssign:", personalityTitleToAssign)
-        print("personalityRuleToAssign:", personalityRuleToAssign)
-        print("personalityIDToAssign:", personalityIDToAssign)
-        
         
         finalAddedPlayers[ID].personalityTitle = personalityTitleToAssign
         finalAddedPlayers[ID].personalityRules = personalityRuleToAssign
