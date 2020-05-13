@@ -340,6 +340,7 @@
                     <connections>
                         <outlet property="ruleLabel" destination="iWl-2D-eTd" id="4p8-0d-1PQ"/>
                         <outlet property="titleLabel" destination="gaH-IP-47c" id="qbd-0v-zce"/>
+                        <segue destination="6Kp-3W-ZLF" kind="presentation" identifier="gameLoopSegue" id="vYU-F4-xHX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0M-7b-1NM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -348,6 +349,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="616-Pj-QZX"/>
+        <segue reference="vYU-F4-xHX"/>
     </inferredMetricsTieBreakers>
 </document>
