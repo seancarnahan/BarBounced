@@ -9,12 +9,13 @@
 import UIKit
 
 class playerObject {
-    var playerID: Int?
+    var playerID: Int? //index in the list
     var playerName: String?
     var personalityTitle: String?
     var personalityRules: String?
     var hasPersonality: Bool?
     var assignedButton: UIButton?
+    var personalityCardID: Int?
 }
 
 class ViewController: UIViewController {

@@ -41,7 +41,7 @@ class gameController: UIViewController {
     class GameObj {
         var ordinal: Int?
         var color: UIColor?
-        var personalityWinner: String?
+        
         var personality: String?
         var message: String?
         var personalityGame: Bool?
@@ -143,7 +143,7 @@ class gameController: UIViewController {
         //SET FIELDS
         newGame.ordinal = ordinalCounter
         newGame.color = randomColor
-        newGame.personalityWinner = ""
+        
         newGame.personality = ""
         
         newGame.personalityGame = false //add logic
@@ -159,7 +159,6 @@ class gameController: UIViewController {
             print("-----------Game ", game.ordinal!, ": -------------------")
             print("Ordinal:",game.ordinal!)
             print("color:",game.color!)
-            print("personalityWinner:",game.personalityWinner!)
             print("personality:",game.personality!)
             print("message:",game.message!)
             print("personalityGame:",game.personalityGame!)

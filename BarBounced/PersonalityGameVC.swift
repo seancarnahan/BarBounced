@@ -80,7 +80,6 @@ class PersonalityGameVC: UIViewController {
     
     var finalAddedPlayers: [playerObject] = []
     var listOfPersonCards: [PGameObj] = []
-    var dictNameToOrdinal: [String: Int] = [:]
     
     var ordinalCounter = 0
     var currentPCardNameTitle = "BLANK"
@@ -140,7 +139,6 @@ class PersonalityGameVC: UIViewController {
         vc.finalAddedPlayers = self.finalAddedPlayers
         vc.listOfPersonCards = self.listOfPersonCards
         vc.cardOrdinal = self.cardOrdinal
-        vc.dictNameToOrdinal = self.dictNameToOrdinal
         
     }
     
@@ -165,8 +163,6 @@ class PersonalityGameVC: UIViewController {
         //add random color for background
         let randomColor: UIColor = .randomColor
         
-        //populate dictNameToOrdinal: String -> Int
-        dictNameToOrdinal[key] = ordinalCounter
         
         //populate personality card game
         newPCard.ordinal = ordinalCounter
