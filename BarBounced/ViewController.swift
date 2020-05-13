@@ -8,6 +8,16 @@
 
 import UIKit
 
+class playerObject {
+    var playerID: Int? //index in the list
+    var playerName: String?
+    var personalityTitle: String?
+    var personalityRules: String?
+    var hasPersonality: Bool?
+    var assignedButton: UIButton?
+    var personalityCardID: Int?
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var addPlayerTextField: UITextField!
@@ -15,7 +25,7 @@ class ViewController: UIViewController {
     var player1Name = ""
     var addedUsers = 0
     var possibleUsers: [UILabel] = []
-    var addedPlayers: [String:String] = [:]
+    var addedPlayers: [playerObject] = []
 
     @IBOutlet weak var userOne: UILabel!
     
@@ -44,10 +54,18 @@ class ViewController: UIViewController {
         
         possibleUsers[addedUsers].isHidden = false
         possibleUsers[addedUsers].text = self.player1Name
-        addedPlayers[self.player1Name] = ""
+        //addedPlayers[self.player1Name] = ""
+        //addedPlayers[addedUsers] = [self.player1Name, ""]
+        
+        let newPlayer = playerObject()
+        newPlayer.playerID = addedUsers
+        newPlayer.playerName = self.player1Name
+        newPlayer.personalityTitle = ""
+        newPlayer.personalityRules = ""
+        newPlayer.hasPersonality = false
+        addedPlayers.append(newPlayer)
+        
         addedUsers += 1
-        
-        
         addPlayerTextField.text = ""
     }
     

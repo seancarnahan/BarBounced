@@ -10,7 +10,7 @@ import UIKit
 
 class PersonalityWarningVC: UIViewController {
 
-    var finalAddedPlayers: [String:String] = [:]
+    var finalAddedPlayers: [playerObject] = []
     var whichSegue = "game"
     
     

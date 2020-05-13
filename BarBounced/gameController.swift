@@ -34,14 +34,14 @@ class gameController: UIViewController {
     ]
     
     var ordinalCounter = 0
-    var finalAddedPlayers: [String:String] = [:]
+    var finalAddedPlayers: [playerObject] = []
     var listOfGames: [GameObj] = []
     var gameCardCounter = 0
     
     class GameObj {
         var ordinal: Int?
         var color: UIColor?
-        var personalityWinner: String?
+        
         var personality: String?
         var message: String?
         var personalityGame: Bool?
@@ -143,7 +143,7 @@ class gameController: UIViewController {
         //SET FIELDS
         newGame.ordinal = ordinalCounter
         newGame.color = randomColor
-        newGame.personalityWinner = ""
+        
         newGame.personality = ""
         
         newGame.personalityGame = false //add logic
@@ -159,7 +159,6 @@ class gameController: UIViewController {
             print("-----------Game ", game.ordinal!, ": -------------------")
             print("Ordinal:",game.ordinal!)
             print("color:",game.color!)
-            print("personalityWinner:",game.personalityWinner!)
             print("personality:",game.personality!)
             print("message:",game.message!)
             print("personalityGame:",game.personalityGame!)
@@ -168,9 +167,11 @@ class gameController: UIViewController {
     
     func getRandomName() -> String{
         //add check to see if any players were added
-        
-        return finalAddedPlayers.keys.randomElement()!
-        
+        var randomNames : [String] = []
+        for player in finalAddedPlayers {
+            randomNames.append(player.playerName!)
+        }
+        return randomNames.randomElement()!
     }
     
     func getRandomGame() -> GameObj{
