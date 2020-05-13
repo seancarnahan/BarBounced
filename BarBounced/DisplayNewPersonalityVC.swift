@@ -21,6 +21,25 @@ class DisplayNewPersonalityVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //------TESTING-----//
+        print(peopleToDisplay)
+        for person in peopleToDisplay {
+            print(person)
+            print(finalAddedPlayers[person].playerName)
+            print(finalAddedPlayers[person].personalityTitle)
+        }
+        print("--------------")
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         var player1 = peopleToDisplay[0]
         replacementTitle = finalAddedPlayers[player1].playerName! + " is now " + finalAddedPlayers[player1].personalityTitle!
         
@@ -40,9 +59,9 @@ class DisplayNewPersonalityVC: UIViewController {
     }
     
     @objc func leftViewTapped() {
-        
         if isSecondCard {
             //then segue
+            performSegue(withIdentifier: "gameLoopSegue", sender: self)
         }
         
         if peopleToDisplay.count > 1 {
@@ -50,6 +69,7 @@ class DisplayNewPersonalityVC: UIViewController {
             
         } else {
             //then segue
+            performSegue(withIdentifier: "gameLoopSegue", sender: self)
         }
     }
     
@@ -57,12 +77,14 @@ class DisplayNewPersonalityVC: UIViewController {
         
         if isSecondCard {
             //then segue
+            performSegue(withIdentifier: "gameLoopSegue", sender: self)
         }
         
         if peopleToDisplay.count > 1 {
             displaySecondPerson()
         } else {
             //then segue
+            performSegue(withIdentifier: "gameLoopSegue", sender: self)
         }
     }
     
@@ -73,5 +95,12 @@ class DisplayNewPersonalityVC: UIViewController {
         
         titleLabel.text = replacementTitle
         ruleLabel.text = finalAddedPlayers[player2].personalityRules
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! gameController
+          
+          
+        vc.finalAddedPlayers = self.finalAddedPlayers
     }
 }
