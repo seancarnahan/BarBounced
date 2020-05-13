@@ -65,6 +65,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userOneClicked(_ sender: Any) {
         if layerNumber == 2 {
+            print("enter second layer A")
             secondPlayerChosen(ID: 0)
         } else {
             playerChosen(ID: 0)
@@ -72,7 +73,9 @@ class PersonChooserVC: UIViewController {
     }
     
     @IBAction func userTwoClicked(_ sender: Any) {
+        
         if layerNumber == 2 {
+            print("enter second layer B")
             secondPlayerChosen(ID: 1)
         } else {
             playerChosen(ID: 1)
@@ -81,6 +84,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userThreeClicked(_ sender: Any) {
         if layerNumber == 2 {
+            print("enter second layer C")
             secondPlayerChosen(ID: 2)
         } else {
             playerChosen(ID: 2)
@@ -88,7 +92,6 @@ class PersonChooserVC: UIViewController {
     }
     
     func playerChosen(ID: Int) {
-        layerNumber += 1
         if finalAddedPlayers[ID].personalityTitle == "" {
             //only access layer 1 -> clicked on person without personality
             
@@ -140,6 +143,11 @@ class PersonChooserVC: UIViewController {
     }
     
     func secondPlayerChosen(ID: Int) {
+        print("personalityTitleToAssign:", personalityTitleToAssign)
+        print("personalityRuleToAssign:", personalityRuleToAssign)
+        print("personalityIDToAssign:", personalityIDToAssign)
+        
+        
         finalAddedPlayers[ID].personalityTitle = personalityTitleToAssign
         finalAddedPlayers[ID].personalityRules = personalityRuleToAssign
         finalAddedPlayers[ID].personalityCardID = personalityIDToAssign

@@ -22,24 +22,6 @@ class DisplayNewPersonalityVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //------TESTING-----//
-        print(peopleToDisplay)
-        for person in peopleToDisplay {
-            print(person)
-            print(finalAddedPlayers[person].playerName)
-            print(finalAddedPlayers[person].personalityTitle)
-        }
-        print("--------------")
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         var player1 = peopleToDisplay[0]
         replacementTitle = finalAddedPlayers[player1].playerName! + " is now " + finalAddedPlayers[player1].personalityTitle!
         
