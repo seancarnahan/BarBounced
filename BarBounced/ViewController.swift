@@ -33,15 +33,68 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var userThree: UILabel!
     
+    @IBOutlet weak var userFour: UILabel!
+    
+    @IBOutlet weak var userFive: UILabel!
+    
+    @IBOutlet weak var userSix: UILabel!
+    
+    @IBOutlet weak var userSeven: UILabel!
+    
+    @IBOutlet weak var userEight: UILabel!
+    
+    @IBOutlet weak var userNine: UILabel!
+    
+    @IBOutlet weak var userTen: UILabel!
+    
+    @IBOutlet weak var userEleven: UILabel!
+    
+    @IBOutlet weak var userTwelve: UILabel!
+    
+    @IBOutlet weak var userThirteen: UILabel!
+    
+    @IBOutlet weak var userFourteen: UILabel!
+    
+    @IBOutlet weak var userFifteen: UILabel!
+    
+    @IBOutlet weak var userSixteen: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userOne.isHidden = true
         userTwo.isHidden = true
         userThree.isHidden = true
+        userFour.isHidden = true
+        userFive.isHidden = true
+        userSix.isHidden = true
+        userSeven.isHidden = true
+        userEight.isHidden = true
+        userNine.isHidden = true
+        userTen.isHidden = true
+        userEleven.isHidden = true
+        userTwelve.isHidden = true
+        userThirteen.isHidden = true
+        userFourteen.isHidden = true
+        userFifteen.isHidden = true
+        userSixteen.isHidden = true
         
         possibleUsers.append(userOne)
         possibleUsers.append(userTwo)
         possibleUsers.append(userThree)
+        possibleUsers.append(userFour)
+        possibleUsers.append(userFive)
+        possibleUsers.append(userSix)
+        possibleUsers.append(userSeven)
+        possibleUsers.append(userEight)
+        possibleUsers.append(userNine)
+        possibleUsers.append(userTen)
+        possibleUsers.append(userEleven)
+        possibleUsers.append(userTwelve)
+        possibleUsers.append(userThirteen)
+        possibleUsers.append(userFourteen)
+        possibleUsers.append(userFifteen)
+        possibleUsers.append(userSixteen)
         
         print("-------------")
         // Do any additional setup after loading the view.
@@ -50,7 +103,7 @@ class ViewController: UIViewController {
     
     @IBAction func addPlayerButton(_ sender: UIButton) {
         //ADDING USER
-        print("IS BUTTON PRESSED SECOND TIME THRU")
+        
         self.player1Name = addPlayerTextField.text!
         
         possibleUsers[addedUsers].isHidden = false
