@@ -95,7 +95,7 @@ class PersonalityGameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("personality game LOADED")
+        
         for (key,value) in personMessages {
             populateListOfPersonCards(key: key, value: value)
         }
@@ -120,14 +120,14 @@ class PersonalityGameVC: UIViewController {
     }
     
     @objc func leftViewTapped() {
-        print("Personality Left click")
+        
         populatePCard()
         
         
     }
     
     @objc func rightViewTapped() {
-        print("Personality Right click")
+        
         
          performSegue(withIdentifier: "winnerChoosesSegue", sender: self)
     }

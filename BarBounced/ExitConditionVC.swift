@@ -68,7 +68,7 @@ class ExitConditionVC: UIViewController {
         for player in 0...15 {
             if player < finalAddedPlayers.count {
                 playerLabels[player].isHidden = false
-                playerLabels[player].text = finalAddedPlayers[player].playerName! + " is " + finalAddedPlayers[player].personalityTitle!
+                playerLabels[player].text = finalAddedPlayers[player].playerName! + ". is " + finalAddedPlayers[player].personalityTitle!
             } else {
                 playerLabels[player].isHidden = true
             }
