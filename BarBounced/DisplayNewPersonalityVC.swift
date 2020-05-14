@@ -15,6 +15,7 @@ class DisplayNewPersonalityVC: UIViewController {
     var replacementTitle = ""
     var isSecondCard = false
     var isTriggeredExit = false
+    var isHomeVersion = 0
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -22,10 +23,6 @@ class DisplayNewPersonalityVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for person in peopleToDisplay {
-            print(finalAddedPlayers[person].playerName)
-        }
         
         let player1 = peopleToDisplay[0]
         replacementTitle = finalAddedPlayers[player1].playerName! + " is now " + finalAddedPlayers[player1].personalityTitle!
@@ -112,6 +109,7 @@ class DisplayNewPersonalityVC: UIViewController {
         } else {
             let vc = segue.destination as! gameController
             vc.finalAddedPlayers = self.finalAddedPlayers
+            vc.isHomeVersion = self.isHomeVersion
         }
 
     }

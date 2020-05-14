@@ -37,6 +37,7 @@ class gameController: UIViewController {
     var finalAddedPlayers: [playerObject] = []
     var listOfGames: [GameObj] = []
     var gameCardCounter = 0
+    var isHomeVersion = 0
     
     class GameObj {
         var ordinal: Int?
@@ -120,6 +121,7 @@ class gameController: UIViewController {
         
         //sets value of a variable in gameController
         vc.finalAddedPlayers = self.finalAddedPlayers
+        vc.isHomeVersion = self.isHomeVersion
     }
     
     func populateListofGames(key: String, value: Bool) {
@@ -138,8 +140,6 @@ class gameController: UIViewController {
         let randomColor: UIColor = .random
         
         
-        
-        
         //SET FIELDS
         newGame.ordinal = ordinalCounter
         newGame.color = randomColor
@@ -152,17 +152,6 @@ class gameController: UIViewController {
         
         listOfGames.append(newGame)
         
-    }
-    
-    func ViewListOfGames(){
-        for game in listOfGames {
-            print("-----------Game ", game.ordinal!, ": -------------------")
-            print("Ordinal:",game.ordinal!)
-            print("color:",game.color!)
-            print("personality:",game.personality!)
-            print("message:",game.message!)
-            print("personalityGame:",game.personalityGame!)
-        }
     }
     
     func getRandomName() -> String{
