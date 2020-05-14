@@ -85,6 +85,7 @@ class PersonalityGameVC: UIViewController {
     var currentPCardNameTitle = "BLANK"
     var dataToSend: [String] = []
     var cardOrdinal = 0
+    var isHomeVersion = 0
     
     @IBOutlet weak var pGameTitle: UILabel!
     

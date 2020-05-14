@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     var addedUsers = 0
     var possibleUsers: [UILabel] = []
     var addedPlayers: [playerObject] = []
+    var isHomeVersion = 0
 
     @IBOutlet weak var userOne: UILabel!
     
@@ -59,6 +60,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var userSixteen: UILabel!
     
+    
+    @IBOutlet weak var homeOrBarSwitch: UISegmentedControl!
+    
+    
+    @IBAction func homeorBarController(_ sender: Any) {
+        isHomeVersion = homeOrBarSwitch.selectedSegmentIndex
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,6 +140,7 @@ class ViewController: UIViewController {
         
         //sets value of a variable in gameController
         vc.finalAddedPlayers = self.addedPlayers
+        vc.isHomeVersion = self.isHomeVersion
     }
     
     

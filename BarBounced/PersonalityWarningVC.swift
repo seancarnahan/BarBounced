@@ -12,6 +12,7 @@ class PersonalityWarningVC: UIViewController {
 
     var finalAddedPlayers: [playerObject] = []
     var whichSegue = "game"
+    var isHomeVersion = 0
     
     
     override func viewDidLoad() {
@@ -36,11 +37,13 @@ class PersonalityWarningVC: UIViewController {
                    
             //sets value of a variable in gameController
             vc.finalAddedPlayers = self.finalAddedPlayers
+            vc.isHomeVersion = self.isHomeVersion
         } else if whichSegue == "personality" {
             let PGVC = segue.destination as! PersonalityGameVC
                               
             //sets value of a variable in gameController
             PGVC.finalAddedPlayers = self.finalAddedPlayers
+            PGVC.isHomeVersion = self.isHomeVersion
             
         }
        

@@ -106,7 +106,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userOneClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 0")
+            
             secondPlayerChosen(ID: 0)
         } else {
             playerChosen(ID: 0)
@@ -116,7 +116,7 @@ class PersonChooserVC: UIViewController {
     @IBAction func userTwoClicked(_ sender: Any) {
         
         if layerNumber == 2 {
-            print("enter second layer 2 with id 1")
+            
             secondPlayerChosen(ID: 1)
         } else {
             playerChosen(ID: 1)
@@ -125,7 +125,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userThreeClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 2")
+            
             secondPlayerChosen(ID: 2)
         } else {
             playerChosen(ID: 2)
@@ -135,7 +135,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userFourClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 3")
+            
             secondPlayerChosen(ID: 3)
         } else {
             playerChosen(ID: 3)
@@ -144,7 +144,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userFiveClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 4")
+            
             secondPlayerChosen(ID: 4)
         } else {
             playerChosen(ID: 4)
@@ -153,7 +153,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userSixClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 5")
+            
             secondPlayerChosen(ID: 5)
         } else {
             playerChosen(ID: 5)
@@ -162,7 +162,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userSevenClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 6")
+            
             secondPlayerChosen(ID: 6)
         } else {
             playerChosen(ID: 6)
@@ -171,7 +171,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userEightClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 7")
+            
             secondPlayerChosen(ID: 7)
         } else {
             playerChosen(ID: 7)
@@ -180,7 +180,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userNineClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 8")
+            
             secondPlayerChosen(ID: 8)
         } else {
             playerChosen(ID: 8)
@@ -189,7 +189,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userTenClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 9")
+            
             secondPlayerChosen(ID: 9)
         } else {
             playerChosen(ID: 9)
@@ -198,7 +198,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userElevenClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 10")
+            
             secondPlayerChosen(ID: 10)
         } else {
             playerChosen(ID: 10)
@@ -207,7 +207,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userTwelveClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 11")
+            
             secondPlayerChosen(ID: 11)
         } else {
             playerChosen(ID: 11)
@@ -216,7 +216,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userThirteenClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 12")
+            
             secondPlayerChosen(ID: 12)
         } else {
             playerChosen(ID: 12)
@@ -225,7 +225,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userFourteenClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 13")
+            
             secondPlayerChosen(ID: 13)
         } else {
             playerChosen(ID: 13)
@@ -234,7 +234,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userFifteenClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 14")
+            
             secondPlayerChosen(ID: 14)
         } else {
             playerChosen(ID: 14)
@@ -243,7 +243,7 @@ class PersonChooserVC: UIViewController {
     
     @IBAction func userSixteenClicked(_ sender: Any) {
         if layerNumber == 2 {
-            print("enter second layer 2 with id 15")
+            
             secondPlayerChosen(ID: 15)
         } else {
             playerChosen(ID: 15)
