@@ -206,6 +206,7 @@
                         <outlet property="userThree" destination="NMV-Su-yFm" id="sJg-oD-dUZ"/>
                         <outlet property="userTwelve" destination="G6h-IL-a9B" id="ReG-Lm-Dos"/>
                         <outlet property="userTwo" destination="Zk6-ar-0Tf" id="XuZ-E0-Uf5"/>
+                        <outlet property="warningPopover" destination="W5t-SA-zfJ" id="kyV-yL-dUo"/>
                         <segue destination="6Kp-3W-ZLF" kind="presentation" identifier="gameViewSegue" destinationCreationSelector="gameViewSegue:" id="616-Pj-QZX"/>
                     </connections>
                 </viewController>
@@ -218,6 +219,34 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" id="W5t-SA-zfJ">
+                    <rect key="frame" x="0.0" y="0.0" width="507" height="295"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Niy-X4-d0T">
+                            <rect key="frame" x="187" y="210" width="132" height="47"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.2683170708" green="0.52451794659999995" blue="0.27351966840000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Play Anyways">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="finishedUserWarning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xbm-Ji-dvg"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN3-6o-we4">
+                            <rect key="frame" x="65" y="20" width="376" height="182"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">Warning Alcohol is really bad and it can hurt you so unless you really hate yourself stay away from this application. Play at your own risk. We are not responsible for death</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <viewLayoutGuide key="safeArea" id="8eV-Kw-6xU"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="138.61607142857142" y="137.68115942028987"/>
         </scene>
