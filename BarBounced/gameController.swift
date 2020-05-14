@@ -52,8 +52,8 @@ class gameController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("LOADED: gameController.swift")
-        print(finalAddedPlayers)
+        
+        
 
         //construct games object -> underscore means we dont use that item
         for (key,value) in gameMessages {
@@ -82,13 +82,13 @@ class gameController: UIViewController {
     }
     
     @objc func leftViewTapped() {
-        print("Left")
+        
         populateGameCard()
         
     }
     
     @objc func rightViewTapped() {
-        print("Right")
+        
         populateGameCard()
     }
     

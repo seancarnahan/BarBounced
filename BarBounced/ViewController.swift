@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         possibleUsers.append(userFifteen)
         possibleUsers.append(userSixteen)
         
-        print("-------------")
+        
         // Do any additional setup after loading the view.
         //Head Hancho -> first person -> the rest are just ur average honchos
     }

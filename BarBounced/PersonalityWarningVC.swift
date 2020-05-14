@@ -16,10 +16,6 @@ class PersonalityWarningVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("LOADED PersonalityWarningVC")
-        //print(finalAddedPlayers)
-
-        // Do any additional setup after loading the view.
     }
     
     
