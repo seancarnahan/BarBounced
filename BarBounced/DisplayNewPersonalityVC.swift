@@ -14,6 +14,7 @@ class DisplayNewPersonalityVC: UIViewController {
     var peopleToDisplay : [Int] = []
     var replacementTitle = ""
     var isSecondCard = false
+    var isTriggeredExit = false
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -22,7 +23,7 @@ class DisplayNewPersonalityVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var player1 = peopleToDisplay[0]
+        let player1 = peopleToDisplay[0]
         replacementTitle = finalAddedPlayers[player1].playerName! + " is now " + finalAddedPlayers[player1].personalityTitle!
         
         titleLabel.text = replacementTitle
@@ -43,30 +44,50 @@ class DisplayNewPersonalityVC: UIViewController {
     @objc func leftViewTapped() {
         if isSecondCard {
             //then segue
-            performSegue(withIdentifier: "gameLoopSegue", sender: self)
+            if isTriggerExit() {
+                performSegue(withIdentifier: "gameOverSegue", sender: self)
+            } else {
+                performSegue(withIdentifier: "gameLoopSegue", sender: self)
+            }
         }
+        
         
         if peopleToDisplay.count > 1 {
             displaySecondPerson()
-            
         } else {
             //then segue
-            performSegue(withIdentifier: "gameLoopSegue", sender: self)
+            if isTriggerExit() {
+                performSegue(withIdentifier: "gameOverSegue", sender: self)
+            } else {
+                performSegue(withIdentifier: "gameLoopSegue", sender: self)
+            }
         }
     }
+    
+    
+    
     
     @objc func rightViewTapped() {
         
         if isSecondCard {
             //then segue
-            performSegue(withIdentifier: "gameLoopSegue", sender: self)
+            if isTriggerExit() {
+                performSegue(withIdentifier: "gameOverSegue", sender: self)
+            } else {
+                performSegue(withIdentifier: "gameLoopSegue", sender: self)
+            }
         }
+        
         
         if peopleToDisplay.count > 1 {
             displaySecondPerson()
         } else {
             //then segue
-            performSegue(withIdentifier: "gameLoopSegue", sender: self)
+            if isTriggerExit() {
+                performSegue(withIdentifier: "gameOverSegue", sender: self)
+            } else {
+                performSegue(withIdentifier: "gameLoopSegue", sender: self)
+            }
         }
     }
     
@@ -80,9 +101,31 @@ class DisplayNewPersonalityVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! gameController
-          
-          
-        vc.finalAddedPlayers = self.finalAddedPlayers
+        if isTriggeredExit {
+            let exitVC = segue.destination as! ExitConditionVC
+            exitVC.finalAddedPlayers = self.finalAddedPlayers
+            
+        } else {
+            let vc = segue.destination as! gameController
+            vc.finalAddedPlayers = self.finalAddedPlayers
+        }
+
+    }
+    
+    func isTriggerExit() -> Bool {
+        var triggerExit = true
+        for player in finalAddedPlayers {
+            if player.hasPersonality == false {
+                triggerExit = false
+            }
+        }
+        
+        if triggerExit {
+            //perform segue
+            isTriggeredExit = true
+            return true
+        } else {
+            return false
+        }
     }
 }
