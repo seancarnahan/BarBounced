@@ -68,8 +68,24 @@ class ViewController: UIViewController {
         isHomeVersion = homeOrBarSwitch.selectedSegmentIndex
     }
     
+    @IBAction func finishedUserWarning(_ sender: Any) {
+        self.warningPopover.removeFromSuperview()
+    }
+    
+    @IBOutlet var warningPopover: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //user warning popover
+        self.warningPopover.layer.cornerRadius = 10
+        self.view.addSubview(warningPopover)
+        warningPopover.center = self.view.center
+        
+        
+        
+        
+        
         userOne.isHidden = true
         userTwo.isHidden = true
         userThree.isHidden = true
