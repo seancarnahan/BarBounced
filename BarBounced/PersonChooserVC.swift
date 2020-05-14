@@ -16,6 +16,7 @@ class PersonChooserVC: UIViewController {
     var buttonList :[UIButton] = []
     var layerNumber = 1
     var peopleToDisplay : [Int] = []
+    var isHomeVersion = 0
     
     
     var personalityTitleToAssign = ""
@@ -335,9 +336,7 @@ class PersonChooserVC: UIViewController {
         let vc = segue.destination as! DisplayNewPersonalityVC
         vc.finalAddedPlayers = self.finalAddedPlayers
         vc.peopleToDisplay = self.peopleToDisplay
-        
-        
-        
+        vc.isHomeVersion = self.isHomeVersion
     }
 }
 

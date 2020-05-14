@@ -15,6 +15,7 @@ class DisplayNewPersonalityVC: UIViewController {
     var replacementTitle = ""
     var isSecondCard = false
     var isTriggeredExit = false
+    var isHomeVersion = 0
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -108,6 +109,7 @@ class DisplayNewPersonalityVC: UIViewController {
         } else {
             let vc = segue.destination as! gameController
             vc.finalAddedPlayers = self.finalAddedPlayers
+            vc.isHomeVersion = self.isHomeVersion
         }
 
     }

@@ -50,10 +50,13 @@ class PersonalityGameVC: UIViewController {
         "The Average Size Card": ["The Average Size Card game USER",true] ,
         "The Where do I know you from card":  ["The Where do I know you from card game USER",true],
         "Young Entrepreneur Card": ["Young Entrepreneur Card game USER",true] ,
-        "The Lumberjack Card": ["The Lumberjack Card game USER",true]
+        "The Lumberjack Card": ["The Lumberjack Card game USER",true] ,
+        "The Egg Man" : ["play the egg man game",false],
+        "The Weenie" : ["play the weenie game USER",true],
+        "The poop monster" : ["play the poop monster game USER", true]
     ]
     
-    var personMessages = [
+    var barPersonMessages = [
         "The Wine Aficionado" : "must talk to people about their poor drink choices, only drink wine for the night and explain to everyone the taste of their wine and how much better it is than their drink",
         "The Heart Breaker" : "You have to bring up your ex at least 2x in each conversation",
         "The Sound Cloud Rapper": "You have to say 'I'm on the fucking come up bro' in each of your conversations through the night",
@@ -78,6 +81,12 @@ class PersonalityGameVC: UIViewController {
         "The Lumberjack Card":"Must wear a flannel and button it up all the way, beard"
     ]
     
+    var homePersonMessages = [
+        "The Egg Man" : "must write down a number between 1 and 20, everyone goes around the room trying to guess the number. If the room guesses the number this person must shotgun with an egg in it",
+        "The Weenie" : "When anyone asks you do something you just cant do it, cuz ur such a fookin weenie",
+        "The poop monster": "Whenever a person of the sex you are attracted to tries to flirt with you in a sexual manner, you must announce that you have to poop and run to the bathroom",
+    ]
+    
     var finalAddedPlayers: [playerObject] = []
     var listOfPersonCards: [PGameObj] = []
     
@@ -96,14 +105,17 @@ class PersonalityGameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        for (key,value) in personMessages {
-            populateListOfPersonCards(key: key, value: value)
+        //do the if check here
+        //barPersonMessages or homePersonMessages
+        if isHomeVersion == 0 {
+            for (key,value) in barPersonMessages {
+                populateListOfPersonCards(key: key, value: value)
+            }
+        } else if isHomeVersion == 1 {
+            for (key,value) in homePersonMessages {
+                populateListOfPersonCards(key: key, value: value)
+            }
         }
-        
-        
-        
-        //viewListOfPersonCards() //-> used for debugging purposes
         
         //LEFT TAP and RIGHT TAP
         let touchArea = CGSize(width: self.view.frame.width/2, height: self.view.frame.height)
@@ -140,6 +152,7 @@ class PersonalityGameVC: UIViewController {
         vc.finalAddedPlayers = self.finalAddedPlayers
         vc.listOfPersonCards = self.listOfPersonCards
         vc.cardOrdinal = self.cardOrdinal
+        vc.isHomeVersion = self.isHomeVersion
         
     }
     
