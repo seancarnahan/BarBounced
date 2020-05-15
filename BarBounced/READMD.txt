@@ -1,4 +1,5 @@
 explaination of optionals: https://hackernoon.com/swift-optionals-explained-simply-e109a4297298
 
+make label or any item tapable: https://programmingwithswift.com/pass-arguments-to-a-selector-with-swift/
 
 Passing Data Between View Controllers : https://www.youtube.com/watch?v=uKQjJb-KSwU

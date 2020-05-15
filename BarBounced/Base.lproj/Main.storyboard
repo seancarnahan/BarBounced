@@ -186,6 +186,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="gear" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yZy-48-tgG">
+                                <rect key="frame" x="31" y="14" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.2683170708" green="0.52451794659999995" blue="0.27351966840000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -193,6 +198,8 @@
                     <connections>
                         <outlet property="addPlayerTextField" destination="CNe-93-kN9" id="JAh-mM-GW5"/>
                         <outlet property="homeOrBarSwitch" destination="YUO-9K-C2R" id="4x9-Nh-NWr"/>
+                        <outlet property="settingsPopover" destination="e70-2I-xuR" id="xkF-c2-V8l"/>
+                        <outlet property="settingsTab" destination="yZy-48-tgG" id="yaf-GE-0or"/>
                         <outlet property="userEight" destination="Dtf-DQ-QDx" id="Vdz-dK-StG"/>
                         <outlet property="userEleven" destination="7qK-aN-Rip" id="Zyf-mW-jPU"/>
                         <outlet property="userFifteen" destination="LtJ-0C-eSu" id="vXM-hw-eLS"/>
@@ -249,6 +256,33 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <viewLayoutGuide key="safeArea" id="8eV-Kw-6xU"/>
+                </view>
+                <view contentMode="scaleToFill" id="e70-2I-xuR">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="358"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTW-PL-kOZ">
+                            <rect key="frame" x="510" y="9" width="30" height="36"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.94049413069999999" green="0.58643039470000002" blue="0.064355612179999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="tintColor" red="0.2683170708" green="0.52451794659999995" blue="0.27351966840000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal" title="X"/>
+                            <connections>
+                                <action selector="leaveSettingsView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sSz-1a-Vqg"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dd0-dH-ocs">
+                            <rect key="frame" x="9" y="61" width="545" height="184"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">Directions for the game: use your peronality that you were assigned. Can add all sorts things like soundtrack control here as well as more detailed instructions</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.2683170708" green="0.52451794659999995" blue="0.27351966840000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <viewLayoutGuide key="safeArea" id="bIt-P0-Jc0"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="138.61607142857142" y="137.68115942028987"/>
@@ -810,6 +844,9 @@
             <point key="canvasLocation" x="963.61607142857133" y="4008.6956521739135"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gear" catalog="system" width="64" height="58"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="616-Pj-QZX"/>
     </inferredMetricsTieBreakers>
