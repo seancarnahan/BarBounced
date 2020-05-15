@@ -20,6 +20,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textField_changed:" destination="BYZ-38-t0r" eventType="editingChanged" id="xRM-qI-vZQ"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaE-iy-gn5">
                                 <rect key="frame" x="606" y="159" width="112" height="38"/>
@@ -220,11 +223,19 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" id="W5t-SA-zfJ">
-                    <rect key="frame" x="0.0" y="0.0" width="507" height="295"/>
+                    <rect key="frame" x="0.0" y="0.0" width="612" height="360"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN3-6o-we4">
+                            <rect key="frame" x="118" y="20" width="376" height="182"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">Warning Alcohol is really bad and it can hurt you so unless you really hate yourself stay away from this application. Play at your own risk. We are not responsible for death</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Niy-X4-d0T">
-                            <rect key="frame" x="187" y="210" width="132" height="47"/>
+                            <rect key="frame" x="240" y="244" width="132" height="47"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.2683170708" green="0.52451794659999995" blue="0.27351966840000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -235,14 +246,6 @@
                                 <action selector="finishedUserWarning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xbm-Ji-dvg"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN3-6o-we4">
-                            <rect key="frame" x="65" y="20" width="376" height="182"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">Warning Alcohol is really bad and it can hurt you so unless you really hate yourself stay away from this application. Play at your own risk. We are not responsible for death</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <viewLayoutGuide key="safeArea" id="8eV-Kw-6xU"/>

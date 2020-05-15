@@ -74,6 +74,17 @@ class ViewController: UIViewController {
     
     @IBOutlet var warningPopover: UIView!
     
+    @IBAction func textField_changed(_ sender: UITextField) {
+        
+        //limit input text to only 16 characters
+        let text = addPlayerTextField.text
+        let length = text!.count
+        
+        if length > 16 {
+            let index = text!.index((text?.startIndex)!,offsetBy: 16)
+            addPlayerTextField.text = String((addPlayerTextField.text![..<index]))
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
