@@ -11,7 +11,7 @@ import UIKit
 class DisplayNewPersonalityVC: UIViewController {
     
     var finalAddedPlayers: [playerObject] = []
-    var peopleToDisplay : [Int] = []
+    var peopleToDisplay : [Int] = [] //list of playerids //these need to be ordered
     var replacementTitle = ""
     var isSecondCard = false
     var isTriggeredExit = false
@@ -25,6 +25,7 @@ class DisplayNewPersonalityVC: UIViewController {
         super.viewDidLoad()
         
         let player1 = peopleToDisplay[0]
+        
         replacementTitle = finalAddedPlayers[player1].playerName! + " is now " + finalAddedPlayers[player1].personalityTitle!
         
         titleLabel.text = replacementTitle

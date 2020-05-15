@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2C2862C6-662B-4F7C-A47B-29991C9533D9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BarBounced/PersonalityGameVC.swift"
@@ -69,7 +69,7 @@
             <Locations>
                <Location
                   uuid = "2C2862C6-662B-4F7C-A47B-29991C9533D9 - 988396f9078be494"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "BarBounced.PersonalityGameVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; BarBounced.PersonalityGameVC"
@@ -84,7 +84,7 @@
                </Location>
                <Location
                   uuid = "2C2862C6-662B-4F7C-A47B-29991C9533D9 - 3c8ba8d16bd75c2f"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "BarBounced.PersonalityGameVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BarBounced.PersonalityGameVC&gt;"

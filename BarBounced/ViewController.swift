@@ -113,7 +113,18 @@ class ViewController: UIViewController {
         
         //remove player from added players
         //issue is HERE because added players is shrinking when we might remove at index 16 even tho added players has shrank to a size of like 12
-        addedPlayers.remove(at: playerIndex)
+        //addedPlayers.remove(at: playerIndex)
+        var indexCounter = 0
+        print("----------Removing label at playerID: ")
+        for player in addedPlayers {
+            print("playerID", player.playerID)
+            if player.playerID == playerID {
+                print(player.playerID)
+                print("index counter: ", indexCounter)
+                addedPlayers.remove(at: indexCounter)
+            }
+            indexCounter += 1
+        }
     }
     
     func makeLabelTapable(label: UILabel, labelIndex: Int, playerID: Int) {
@@ -234,6 +245,11 @@ class ViewController: UIViewController {
     
    //withIdentifier is the identifier for the segue
     @IBAction func sendItButton(_ sender: UIButton) {
+        var orderPlayerIDs = 0
+        for player in addedPlayers {
+            player.playerID = orderPlayerIDs
+            orderPlayerIDs += 1
+        }
         if addedPlayers.count > 0 {
             performSegue(withIdentifier: "gameViewSegue", sender: self)
         } else {
