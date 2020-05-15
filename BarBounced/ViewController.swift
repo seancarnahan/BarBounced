@@ -18,6 +18,11 @@ class playerObject {
     var personalityCardID: Int?
 }
 
+class CustomTapGestureRecognizer: UITapGestureRecognizer {
+    var label: UILabel?
+    var indexOfLabel: Int?
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var addPlayerTextField: UITextField!
@@ -85,6 +90,40 @@ class ViewController: UIViewController {
             addPlayerTextField.text = String((addPlayerTextField.text![..<index]))
         }
     }
+    
+    @objc func clickLabel(sender: CustomTapGestureRecognizer){
+        //clicked on label, remove player from game
+        
+        addedUsers -= 1
+        let label = sender.label!
+        
+        
+        //hide label
+        label.isHidden = true
+        
+        //add label from possibleUsers
+        
+        
+        //remove player from added players
+    }
+    
+    func makeLabelTapable(label: UILabel, labelIndex: Int) {
+        //be able to disable a user from the screen
+        
+        label.isUserInteractionEnabled = true
+        
+        let tapGesture = CustomTapGestureRecognizer(target: self,
+        action: #selector(clickLabel(sender:)))
+        tapGesture.numberOfTapsRequired = 1
+        
+        tapGesture.indexOfLabel = labelIndex
+        tapGesture.label = label
+        
+        
+        label.addGestureRecognizer(tapGesture)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -93,9 +132,7 @@ class ViewController: UIViewController {
         self.view.addSubview(warningPopover)
         warningPopover.center = self.view.center
         
-        
-        
-        
+
         
         userOne.isHidden = true
         userTwo.isHidden = true
@@ -139,21 +176,30 @@ class ViewController: UIViewController {
     @IBAction func addPlayerButton(_ sender: UIButton) {
         //ADDING USER
         if addPlayerTextField.text!.count > 0  {
-            self.player1Name = addPlayerTextField.text!
-            
-            possibleUsers[addedUsers].isHidden = false
-            possibleUsers[addedUsers].text = self.player1Name
-            
-            let newPlayer = playerObject()
-            newPlayer.playerID = addedUsers
-            newPlayer.playerName = self.player1Name
-            newPlayer.personalityTitle = ""
-            newPlayer.personalityRules = ""
-            newPlayer.hasPersonality = false
-            addedPlayers.append(newPlayer)
-            
-            addedUsers += 1
-            addPlayerTextField.text = ""
+            if addedUsers < 16 {
+                self.player1Name = addPlayerTextField.text!
+                
+                possibleUsers[addedUsers].isHidden = false
+                possibleUsers[addedUsers].text = "X " + self.player1Name
+                
+                makeLabelTapable(label: possibleUsers[addedUsers], labelIndex: addedUsers)
+                
+                
+                
+                let newPlayer = playerObject()
+                newPlayer.playerID = addedUsers
+                newPlayer.playerName = self.player1Name
+                newPlayer.personalityTitle = ""
+                newPlayer.personalityRules = ""
+                newPlayer.hasPersonality = false
+                addedPlayers.append(newPlayer)
+                
+                addedUsers += 1
+                addPlayerTextField.text = ""
+            } else {
+                addPlayerTextField.text = "Can't add more than 16 players :("
+            }
+
         } else {
             //this is if the user did not input anything text field
         }
