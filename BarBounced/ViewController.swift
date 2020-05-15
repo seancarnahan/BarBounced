@@ -163,7 +163,13 @@ class ViewController: UIViewController {
     
    //withIdentifier is the identifier for the segue
     @IBAction func sendItButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "gameViewSegue", sender: self)
+        if addedPlayers.count > 0 {
+            performSegue(withIdentifier: "gameViewSegue", sender: self)
+        } else {
+            //no users inputed
+            print("---NEED TO ADD A PLAYER---")
+        }
+        
     }
     
     //this function is called everytime a segue is called
