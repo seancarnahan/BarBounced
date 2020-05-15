@@ -54,6 +54,12 @@ class gameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //TESTING
+        for player in finalAddedPlayers {
+            print("playerID", player.playerID!)
+            print("playerName", player.playerName!)
+        }
+        
         
 
         //construct games object -> underscore means we dont use that item

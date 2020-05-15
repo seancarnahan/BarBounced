@@ -14,8 +14,8 @@
             filePath = "BarBounced/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -50,6 +50,54 @@
             endingLineNumber = "9"
             landmarkName = "unknown"
             landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C2862C6-662B-4F7C-A47B-29991C9533D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarBounced/PersonalityGameVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "gameMessages"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "2C2862C6-662B-4F7C-A47B-29991C9533D9 - 988396f9078be494"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BarBounced.PersonalityGameVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; BarBounced.PersonalityGameVC"
+                  moduleName = "BarBounced"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seancarnahan/Personal/Projects/BarBounced/BarBounced/PersonalityGameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "5026">
+               </Location>
+               <Location
+                  uuid = "2C2862C6-662B-4F7C-A47B-29991C9533D9 - 3c8ba8d16bd75c2f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BarBounced.PersonalityGameVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BarBounced.PersonalityGameVC&gt;"
+                  moduleName = "BarBounced"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seancarnahan/Personal/Projects/BarBounced/BarBounced/PersonalityGameVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "4990">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
