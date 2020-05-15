@@ -24,6 +24,10 @@ class CustomTapGestureRecognizer: UITapGestureRecognizer {
     var playerID: Int?
 }
 
+class SettingsTapRecognizer: UITapGestureRecognizer {
+    
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var addPlayerTextField: UITextField!
@@ -79,7 +83,14 @@ class ViewController: UIViewController {
         self.warningPopover.removeFromSuperview()
     }
     
+    @IBAction func leaveSettingsView(_ sender: Any) {
+        self.settingsPopover.removeFromSuperview()
+    }
+    
+    
     @IBOutlet var warningPopover: UIView!
+    
+    @IBOutlet var settingsPopover: UIView!
     
     @IBAction func textField_changed(_ sender: UITextField) {
         
@@ -145,8 +156,35 @@ class ViewController: UIViewController {
         
     }
     
+    func makeSettingsClickable() {
+        settingsTab.isUserInteractionEnabled = true
+        
+        let tapGesture = SettingsTapRecognizer(target: self,
+        action: #selector(settingsTableisClicked))
+        
+        tapGesture.numberOfTapsRequired = 1
+        
+        settingsTab.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func settingsTableisClicked(){
+        print("Settings Icon has been tapped")
+        self.settingsPopover.layer.cornerRadius = 10
+        self.view.addSubview(settingsPopover)
+        settingsPopover.center = self.view.center
+        
+    }
+    
+    @IBOutlet weak var settingsTab: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //settings popover
+         makeSettingsClickable()
+
+        
+        
         
         //user warning popover
         self.warningPopover.layer.cornerRadius = 10
