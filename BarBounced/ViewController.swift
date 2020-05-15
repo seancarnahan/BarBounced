@@ -21,6 +21,7 @@ class playerObject {
 class CustomTapGestureRecognizer: UITapGestureRecognizer {
     var label: UILabel?
     var indexOfLabel: Int?
+    var playerID: Int?
 }
 
 class ViewController: UIViewController {
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
     var possibleUsers: [UILabel] = []
     var addedPlayers: [playerObject] = []
     var isHomeVersion = 0
+    var possiblePlayerIDs : [Int] = []
 
     @IBOutlet weak var userOne: UILabel!
     
@@ -96,6 +98,8 @@ class ViewController: UIViewController {
         
         addedUsers -= 1
         let label = sender.label!
+        let playerID = sender.playerID!
+        let playerIndex = sender.indexOfLabel!
         
         
         //hide label
@@ -104,10 +108,15 @@ class ViewController: UIViewController {
         //add label from possibleUsers
         possibleUsers.append(label)
         
+        //add player's id to possible playerIDs
+        possiblePlayerIDs.append(playerID)
+        
         //remove player from added players
+        //issue is HERE because added players is shrinking when we might remove at index 16 even tho added players has shrank to a size of like 12
+        addedPlayers.remove(at: playerIndex)
     }
     
-    func makeLabelTapable(label: UILabel, labelIndex: Int) {
+    func makeLabelTapable(label: UILabel, labelIndex: Int, playerID: Int) {
         //be able to disable a user from the screen
         
         label.isUserInteractionEnabled = true
@@ -118,6 +127,7 @@ class ViewController: UIViewController {
         
         tapGesture.indexOfLabel = labelIndex
         tapGesture.label = label
+        tapGesture.playerID = playerID
         
         
         label.addGestureRecognizer(tapGesture)
@@ -179,6 +189,9 @@ class ViewController: UIViewController {
             if addedUsers < 16 {
                 self.player1Name = addPlayerTextField.text!
                 
+                possiblePlayerIDs.append(addedUsers)
+                let newId = possiblePlayerIDs.randomElement()
+                
                 var randomLablel = UILabel()
                 while true {
                     randomLablel = possibleUsers.randomElement()!
@@ -192,7 +205,8 @@ class ViewController: UIViewController {
                 randomLablel.text = "X " + self.player1Name
 
                 let newPlayer = playerObject()
-                newPlayer.playerID = addedUsers
+                //possiblePlayerIDs
+                newPlayer.playerID = newId
                 newPlayer.playerName = self.player1Name
                 newPlayer.personalityTitle = ""
                 newPlayer.personalityRules = ""
@@ -200,10 +214,12 @@ class ViewController: UIViewController {
                 addedPlayers.append(newPlayer)
                 
                 
-                makeLabelTapable(label: randomLablel, labelIndex: addedUsers)
+                makeLabelTapable(label: randomLablel, labelIndex: addedUsers, playerID:newId!)
                     
                 //remove randomLabel from list of possible users
                 possibleUsers = possibleUsers.filter { $0 != randomLablel }
+                //remove from possible playerIDs
+                possiblePlayerIDs = possiblePlayerIDs.filter { $0 != newId }
                 
                 addedUsers += 1
                 addPlayerTextField.text = ""
@@ -214,8 +230,6 @@ class ViewController: UIViewController {
         } else {
             //this is if the user did not input anything text field
         }
-        
-
     }
     
    //withIdentifier is the identifier for the segue
