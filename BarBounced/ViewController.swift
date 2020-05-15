@@ -138,22 +138,27 @@ class ViewController: UIViewController {
     
     @IBAction func addPlayerButton(_ sender: UIButton) {
         //ADDING USER
+        if addPlayerTextField.text!.count > 0  {
+            self.player1Name = addPlayerTextField.text!
+            
+            possibleUsers[addedUsers].isHidden = false
+            possibleUsers[addedUsers].text = self.player1Name
+            
+            let newPlayer = playerObject()
+            newPlayer.playerID = addedUsers
+            newPlayer.playerName = self.player1Name
+            newPlayer.personalityTitle = ""
+            newPlayer.personalityRules = ""
+            newPlayer.hasPersonality = false
+            addedPlayers.append(newPlayer)
+            
+            addedUsers += 1
+            addPlayerTextField.text = ""
+        } else {
+            //this is if the user did not input anything text field
+        }
         
-        self.player1Name = addPlayerTextField.text!
-        
-        possibleUsers[addedUsers].isHidden = false
-        possibleUsers[addedUsers].text = self.player1Name
-        
-        let newPlayer = playerObject()
-        newPlayer.playerID = addedUsers
-        newPlayer.playerName = self.player1Name
-        newPlayer.personalityTitle = ""
-        newPlayer.personalityRules = ""
-        newPlayer.hasPersonality = false
-        addedPlayers.append(newPlayer)
-        
-        addedUsers += 1
-        addPlayerTextField.text = ""
+
     }
     
    //withIdentifier is the identifier for the segue
