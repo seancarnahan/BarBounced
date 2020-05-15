@@ -102,7 +102,7 @@ class ViewController: UIViewController {
         label.isHidden = true
         
         //add label from possibleUsers
-        
+        possibleUsers.append(label)
         
         //remove player from added players
     }
@@ -179,13 +179,18 @@ class ViewController: UIViewController {
             if addedUsers < 16 {
                 self.player1Name = addPlayerTextField.text!
                 
-                possibleUsers[addedUsers].isHidden = false
-                possibleUsers[addedUsers].text = "X " + self.player1Name
+                var randomLablel = UILabel()
+                while true {
+                    randomLablel = possibleUsers.randomElement()!
+                    if randomLablel.text!.count > 0 {
+                        //exit while loop with new blank random label
+                        break
+                    }
+                }
                 
-                makeLabelTapable(label: possibleUsers[addedUsers], labelIndex: addedUsers)
-                
-                
-                
+                randomLablel.isHidden = false
+                randomLablel.text = "X " + self.player1Name
+
                 let newPlayer = playerObject()
                 newPlayer.playerID = addedUsers
                 newPlayer.playerName = self.player1Name
@@ -193,6 +198,12 @@ class ViewController: UIViewController {
                 newPlayer.personalityRules = ""
                 newPlayer.hasPersonality = false
                 addedPlayers.append(newPlayer)
+                
+                
+                makeLabelTapable(label: randomLablel, labelIndex: addedUsers)
+                    
+                //remove randomLabel from list of possible users
+                possibleUsers = possibleUsers.filter { $0 != randomLablel }
                 
                 addedUsers += 1
                 addPlayerTextField.text = ""
