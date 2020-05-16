@@ -29,8 +29,9 @@ class gameController: UIViewController {
         "Say this outload: 'First to stand on a table doesnt have to drink. 1 . 2 . 3 GO! ": false,
         "Play Drive": false,
         "Play Waterfall regarding the person who reads this card": false,
-        "You are not a true sender, the player to the USER's right, take off your pants or else drink": true,
-        "You are not a true sender, look at this card and make the person to the right drink twice because you have no goals in your life": false
+        "You are not a true sender, the player to the USER1's right, take off your pants or else drink": true,
+        "You are not a true sender, look at this card and make the person to the right drink twice because you have no goals in your life": false,
+        "USER1 slaps USER2 or drink": true
     ]
     
     var ordinalCounter = 0
@@ -135,12 +136,21 @@ class gameController: UIViewController {
     
         
         //add userName field
+        //nameToReplace has 2 different random names associated with it
         let nameToReplace = getRandomName()
+        print("---Games--")
+        print(nameToReplace[0])
+        print(nameToReplace[1])
+        
         if value {
-            newGame.message = key.replacingOccurrences(of: "USER", with:nameToReplace)
+            newGame.message = key.replacingOccurrences(of: "USER1", with: nameToReplace[0])
+            
+            
+            newGame.message = newGame.message!.replacingOccurrences(of: "USER2", with: nameToReplace[1])
         } else {
             newGame.message = key
         }
+        
         
         //add random color for background
         let randomColor: UIColor = .random
@@ -160,13 +170,28 @@ class gameController: UIViewController {
         
     }
     
-    func getRandomName() -> String{
+    func getRandomName() -> [String]{
         //add check to see if any players were added
         var randomNames : [String] = []
+        var randomNamesToSend : [String] = []
         for player in finalAddedPlayers {
             randomNames.append(player.playerName!)
         }
-        return randomNames.randomElement()!
+        
+        let player1 = randomNames.randomElement()!
+        randomNamesToSend.append(player1)
+        var player2 : String
+        
+        //make sure we dont repeat a name
+        while true {
+            player2 = randomNames.randomElement()!
+            if player1 != player2 {
+                randomNamesToSend.append(player2)
+                break
+            }
+        }
+        
+        return randomNamesToSend
     }
     
     func getRandomGame() -> GameObj{
