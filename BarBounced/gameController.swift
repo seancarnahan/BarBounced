@@ -138,9 +138,6 @@ class gameController: UIViewController {
         //add userName field
         //nameToReplace has 2 different random names associated with it
         let nameToReplace = getRandomName()
-        print("---Games--")
-        print(nameToReplace[0])
-        print(nameToReplace[1])
         
         if value {
             newGame.message = key.replacingOccurrences(of: "USER1", with: nameToReplace[0])
