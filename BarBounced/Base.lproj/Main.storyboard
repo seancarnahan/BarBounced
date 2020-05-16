@@ -217,7 +217,7 @@
                         <outlet property="userTwelve" destination="G6h-IL-a9B" id="ReG-Lm-Dos"/>
                         <outlet property="userTwo" destination="Zk6-ar-0Tf" id="XuZ-E0-Uf5"/>
                         <outlet property="warningPopover" destination="W5t-SA-zfJ" id="kyV-yL-dUo"/>
-                        <segue destination="6Kp-3W-ZLF" kind="presentation" identifier="gameViewSegue" destinationCreationSelector="gameViewSegue:" id="616-Pj-QZX"/>
+                        <segue destination="6Kp-3W-ZLF" kind="presentation" identifier="gameViewSegue" id="616-Pj-QZX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
