@@ -21,6 +21,7 @@
 		7E275084242AD76700E2687D /* BarBouncedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E275083242AD76700E2687D /* BarBouncedUITests.swift */; };
 		7E3AC69924668D5F00C3F2F5 /* gameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3AC69824668D5F00C3F2F5 /* gameController.swift */; };
 		7E3AC69B24678F3000C3F2F5 /* PersonalityWarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3AC69A24678F3000C3F2F5 /* PersonalityWarningVC.swift */; };
+		7E7E8C63247092940078335C /* exitEightOrLessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E8C62247092940078335C /* exitEightOrLessVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		7E275085242AD76700E2687D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E3AC69824668D5F00C3F2F5 /* gameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameController.swift; sourceTree = "<group>"; };
 		7E3AC69A24678F3000C3F2F5 /* PersonalityWarningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityWarningVC.swift; sourceTree = "<group>"; };
+		7E7E8C62247092940078335C /* exitEightOrLessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exitEightOrLessVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				7E11A5E124692F5C00DB6EA3 /* PersonChooserVC.swift */,
 				7E11A5E3246BA9BE00DB6EA3 /* DisplayNewPersonalityVC.swift */,
 				7E11A5E5246CAFEC00DB6EA3 /* ExitConditionVC.swift */,
+				7E7E8C62247092940078335C /* exitEightOrLessVC.swift */,
 			);
 			path = BarBounced;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E7E8C63247092940078335C /* exitEightOrLessVC.swift in Sources */,
 				7E3AC69B24678F3000C3F2F5 /* PersonalityWarningVC.swift in Sources */,
 				7E275066242AD76600E2687D /* ViewController.swift in Sources */,
 				7E3AC69924668D5F00C3F2F5 /* gameController.swift in Sources */,
