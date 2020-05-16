@@ -102,14 +102,39 @@ class gameController: UIViewController {
     
     
     func populateGameCard(){
-        let randomList = [1,2,3,4]
+        let randomList = [1,2,3]
         let random = randomList.randomElement()
-        if gameCardCounter == 5 && random == 1 {
+        let amountOfPlayers = finalAddedPlayers.count
+        
+        //algorithm
+        let randomizerDict = [
+            2:[10,13],
+            3:[10,13],
+            4:[10,13],
+            5:[6,8],
+            6:[6,8],
+            7:[6,8],
+            8:[6,8],
+            9:[4,5],
+            10:[4,5],
+            11:[4,5],
+            12:[4,5],
+            13:[3,4],
+            14:[3,4],
+            15:[3,4],
+            16:[3,4],
+        ]
+        
+        let start = randomizerDict[amountOfPlayers]![0]
+        let end = randomizerDict[amountOfPlayers]![1]
+        
+        
+        if gameCardCounter == start && random == 1 {
             //possibility of segue to personality warning
         
             performSegue(withIdentifier: "personalityWarningSegue", sender: self)
             
-        } else if gameCardCounter == 10 {
+        } else if gameCardCounter == end {
             //absolutely segue to personality warning
             performSegue(withIdentifier: "personalityWarningSegue", sender: self)
         }
