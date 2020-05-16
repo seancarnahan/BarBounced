@@ -288,7 +288,7 @@ class ViewController: UIViewController {
             player.playerID = orderPlayerIDs
             orderPlayerIDs += 1
         }
-        if addedPlayers.count > 0 {
+        if addedPlayers.count > 1 {
             performSegue(withIdentifier: "gameViewSegue", sender: self)
         } else {
             //no users inputed
