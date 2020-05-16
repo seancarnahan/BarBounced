@@ -47,7 +47,11 @@ class DisplayNewPersonalityVC: UIViewController {
         if isSecondCard {
             //then segue
             if isTriggerExit() {
-                performSegue(withIdentifier: "gameOverSegue", sender: self)
+                if finalAddedPlayers.count > 8 {
+                     performSegue(withIdentifier: "gameOverSegue", sender: self)
+                } else {
+                    performSegue(withIdentifier: "eightOrLessSegue", sender: self)
+                }
             } else {
                 performSegue(withIdentifier: "gameLoopSegue", sender: self)
             }
@@ -59,7 +63,11 @@ class DisplayNewPersonalityVC: UIViewController {
         } else {
             //then segue
             if isTriggerExit() {
-                performSegue(withIdentifier: "gameOverSegue", sender: self)
+                if finalAddedPlayers.count > 8 {
+                     performSegue(withIdentifier: "gameOverSegue", sender: self)
+                } else {
+                    performSegue(withIdentifier: "eightOrLessSegue", sender: self)
+                }
             } else {
                 performSegue(withIdentifier: "gameLoopSegue", sender: self)
             }
@@ -74,7 +82,11 @@ class DisplayNewPersonalityVC: UIViewController {
         if isSecondCard {
             //then segue
             if isTriggerExit() {
-                performSegue(withIdentifier: "gameOverSegue", sender: self)
+                if finalAddedPlayers.count > 8 {
+                     performSegue(withIdentifier: "gameOverSegue", sender: self)
+                } else {
+                    performSegue(withIdentifier: "eightOrLessSegue", sender: self)
+                }
             } else {
                 performSegue(withIdentifier: "gameLoopSegue", sender: self)
             }
@@ -86,7 +98,11 @@ class DisplayNewPersonalityVC: UIViewController {
         } else {
             //then segue
             if isTriggerExit() {
-                performSegue(withIdentifier: "gameOverSegue", sender: self)
+                if finalAddedPlayers.count > 8 {
+                     performSegue(withIdentifier: "gameOverSegue", sender: self)
+                } else {
+                    performSegue(withIdentifier: "eightOrLessSegue", sender: self)
+                }
             } else {
                 performSegue(withIdentifier: "gameLoopSegue", sender: self)
             }
@@ -104,9 +120,17 @@ class DisplayNewPersonalityVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if isTriggeredExit {
-            let exitVC = segue.destination as! ExitConditionVC
-            exitVC.finalAddedPlayers = self.finalAddedPlayers
-            
+            //is there less than 9 players
+            //eightOrLessSegue
+            if finalAddedPlayers.count > 8 {
+                let exitVC = segue.destination as! ExitConditionVC
+                exitVC.finalAddedPlayers = self.finalAddedPlayers
+                           
+            } else {
+                let exitEightOrLess = segue.destination as! exitEightOrLessVC
+                exitEightOrLess.finalAddedPlayers = self.finalAddedPlayers
+            }
+           
         } else {
             let vc = segue.destination as! gameController
             vc.finalAddedPlayers = self.finalAddedPlayers
