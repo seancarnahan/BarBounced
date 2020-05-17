@@ -95,6 +95,7 @@ class PersonalityGameVC: UIViewController {
     var dataToSend: [String] = []
     var cardOrdinal = 0
     var isHomeVersion = 0
+    var leftClicksCount = 0
     
     @IBOutlet weak var pGameTitle: UILabel!
     
@@ -133,8 +134,14 @@ class PersonalityGameVC: UIViewController {
     }
     
     @objc func leftViewTapped() {
+        if leftClicksCount >= 1 {
+            performSegue(withIdentifier: "winnerChoosesSegue", sender: self)
+        } else {
+            populatePCard()
+        }
         
-        populatePCard()
+        leftClicksCount += 1
+        
         
         
     }
