@@ -1,5 +1,5 @@
 # BarBounced
-a fun interactive IOS game to play with your friends before a night out.
+A fun interactive IOS game to play with your friends before a night out.
 
 Rules:
 - Supports 2-16 players
